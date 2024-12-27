@@ -1,0 +1,60 @@
+BC.58 Dataset
+=============
+
+Description
+-----------
+* Dataset will probably be dropped due to data quality concerns
+
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: DEM, ERa, Gamma, RSS, VI 
+* Sample size: 58
+* Number of Features: 13
+* Coordinates: With coordinates (EPSG: 25833)
+* Location: British Columbia, Canada
+* Sampling Design: Regular Grid Sampling
+* Study Area Size: 2.1 ha
+* Geological Setting: Glacial till deposits
+* Previous Data Publication: None
+* Contact Information:
+    * [Contact details to be added]
+* Data Quality Issues:
+    * Inconsistent sensor calibration
+    * Missing metadata for some measurements
+    * Potential spatial misalignment between sensors
+    * Unexplained outliers in measurements
+    * Incomplete validation data
+
+Details
+-------
+
+The BC.58 dataset contains soil measurements from a 2.1 hectare agricultural field in British Columbia, Canada. The dataset includes three target soil properties (SOC, pH, and Clay content) along with 13 predictor features derived from digital elevation models (DEM), electrical resistivity (ERa), gamma-ray spectrometry (Gamma), remote sensing (RSS), and vegetation indices (VI). However, due to several data quality concerns including sensor calibration issues and incomplete validation, this dataset may be removed from future releases.
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("BC.58")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+    # Visualize soil properties
+    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
+    soil_map.save("BC58_pH_map.html")
+
+References
+----------

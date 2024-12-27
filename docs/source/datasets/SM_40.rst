@@ -1,0 +1,107 @@
+SM.40 Dataset
+=============
+
+Description
+-----------
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: DEM, ERa 
+* Sample size: 40
+* Number of Features: 3
+* Coordinates: With coordinates (EPSG: 32633)
+* Location: South Moravia, Czechia
+* Sampling Design: Stratified Sampling from previous Regular Grid Sampling, stratification was handpicked to cover contrasting areas
+* Study Area Size: 53 ha
+* Geological Setting: Weichselian sandy loess [? Eventually wrong ?]
+* Previous Data Publication: None
+* Contact Information:
+    * Vojtech Lukas (vojtech.lukas@mendelu.cz), Mendel University in Brno
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+Dataset
+^^^^^^^
+The dataset contains the following target soil properties and features:
+
+Target Soil Properties:
+
+SOC - Soil Organic Carbon
+    * Code: ``SOC_target``
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon following slight adjustments of the Walkley & Black (1934) method (Zbíral et al. 2004)
+    * Sampling Date: May 2004
+    * Sampling Depth: 0 - 30 cm
+
+pH
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in KCl suspension with a glass electrode with unspecified [?please add if you the volumetric or gravimetric soil to liquid ratio?] liquid:soil ratio (Zbíral 2002)
+    * Sampling Date: May 2004
+    * Sampling Depth: 0 - 30 cm
+
+Clay
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Hydrometer method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by measuring suspension density using a hydrometer following slight adjustments of the Bouyoucos (1927) method [? Citation ?]
+    * Sampling Date: April 2006
+    * Sampling Depth: 0 - 30 cm
+
+Groups of Features:
+
+DEM – Digital Elevation Model and Terrain Parameters
+    * Number Features: 2
+    * Code(s): ``Altitude, Slope``
+    * Unit: ``Altitude`` in m, ``Slope`` in °
+    * Sensing: Digital elevation model raster (~2 m) based on LiDAR from "Geoportal of the Czech Office for Surveying, Mapping and Cadastre"
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the ``raster`` package, extracting DEM values from raster at soil sampling locations
+    * Sampling Date: Unknown
+
+ERa – Apparent Electrical Resistivity
+    * Number Features: 1
+    * Code(s): ``ERa``
+    * Unit: Ω m
+    * Sensing: EM38 sensor (Geonics Ltd., Mississauga, Canada) drawn by a vehicle with exploration depth of 0 - 75 cm, in-situ
+    * Processing: Ordinary Kriging to align sensing- with soil sampling locations
+    * Sampling Date: May 2004
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("SM.40")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+    # Visualize soil properties
+    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
+    soil_map.save("SM40_pH_map.html")
+
+References
+----------
+
+Bouyoucos, G. J. (1927). The hydrometer as a new method for the mechanical analysis of soils. Soil science, 23(5), 343-354.
+
+Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.
+
+Zbíral, J., Honsa, I., Malý, S. & Čižmář, D (2004). Analýza půd III : jednotné pracovní postupy [Soil Analysis III : Unified working procedures]. Brno: UKZUZ, 199.
+
+Zbíral, J. (2002). Analýza půd I : jednotné pracovní postupy [Soil analysis I: Integrated work procedures]. Brno: UKZUZ, 197.

@@ -1,0 +1,119 @@
+W.50 Dataset
+============
+
+Description
+-----------
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: DEM, ERa, VI, XRF
+* Sample size: 50 
+* Number of Features: 15
+* Coordinates: Without coordinates because of privacy concerns
+* Location: Wisconsin, USA
+* Sampling Design: conditioned Latin Hypercube Sampling based on electrical conductivity, terrain parameters, and normalized difference vegetation index
+* Study Area Size: 80 ha
+* Geological Setting: Glacial outwash and sediments of the Johnson End Moraine
+* Previous Data Publication: None
+* Contact Information:
+    * Jingyi Huang (jhuang426@wisc.edu), University of Wisconsin-Madison
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+Dataset
+^^^^^^^
+The dataset contains the following target soil properties and features:
+
+Target Soil Properties:
+""""""""""""""""""""""
+
+SOC - Soil Organic Carbon
+    * Code: ``SOC_target``
+    * Unit: %
+    * Protocol: Measured CO₂ release during dry combustion after removing inorganic carbon with an acid (Nelson and Sommers 1996)
+    * Sampling Date: July 2019
+    * Sampling Depth: 0 – 10 cm
+
+pH
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode with a 1:1 liquid:soil gravimetric ratio (Burt 2014)
+    * Sampling Date: July 2019
+    * Sampling Depth: 0 – 10 cm
+
+Clay
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Hydrometer method; separation of the fractions by sieving and sedimentation. Measurement of the separated fractions by weighing the density of the suspension (Gee and Bauder 1979)
+    * Sampling Date: July 2019
+    * Sampling Depth: 0 – 10 cm
+
+Groups of Features:
+"""""""""""""""""
+
+DEM – Digital Elevation Model and Terrain Parameters
+    * Number Features: 2
+    * Code(s): ``Altitude``, ``Slope``
+    * Unit: ``Altitude`` in m, ``Slope`` in °
+    * Sensing: Digital elevation model raster (3 m) based on LiDAR from the "Wisconsin Department of Natural Resources"
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the ``raster`` package, extracting DEM values from raster at soil sampling locations, resampled from the original 3 m resolution to 5 m resolution
+    * Sampling Date: Unknown
+
+ERa – Apparent Electrical Resistivity
+    * Number Features: 1
+    * Code(s): ``ERa``
+    * Unit: Ω m
+    * Sensing: DUALEM-1HS instrument (DUALEM Inc., Milton, Canada) with exploration depth of 0 - 30 cm, in-situ
+    * Processing: Ordinary Kriging to align sensing- with soil sampling locations
+    * Sampling Date: July 2019
+
+VI - Vegetation Indices
+    * Number Features: 2
+    * Code(s): ``NDVI``, ``GNDVI``
+    * Unit: Unitless
+    * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
+    * Processing: Calculating ``NDVI`` as (B08 - B04) / (B08 + B04) and ``GNDVI`` as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
+    * Sampling Date: July 2019
+
+XRF – X-ray fluorescence derived elemental concentrations
+    * Number Features: 10
+    * Code(s): ``XRF_Mg``, ``XRF_Al``, ``XRF_Si``, ``XRF_Ca``, ``XRF_Ti``, ``XRF_Mn``, ``XRF_Fe``, ``XRF_Zn``, ``XRF_Sr``, ``XRF_Zr``
+    * Unit: ppm (estimated through XRF Geochem not ground truth)
+    * Sensing: Delta Premium PXRF spectrometer (Olympus Scientific Solutions Americas Inc., Waltham, USA), on dried and sieved samples (<2 mm) in the laboratory
+    * Processing: Compton normalization method to transform full spectra into estimates of elemental concentrations with accompanied software of the sensor (Geochem mode)
+    * Sampling Date: July 2019
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("W.50")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]  # Note: No coordinates available
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+References
+----------
+
+Burt, R. (Ed.) (2014). Kellogg soil survey laboratory methods manual. United States Department of Agriculture, Natural Resources Conservation Service, National Soil Survey Center, Kellogg Soil Survey Laboratory.
+
+Gee, G. W., & Bauder, J. W. (1979). Particle size analysis by hydrometer: a simplified method for routine textural analysis and a sensitivity test of measurement parameters. Soil Science Society of America Journal, 43(5), 1004-1007.
+
+Nelson, D.W. & Sommers, L.E. (1996) Total Carbon, Organic Carbon, and Organic Matter. In: Sparks, D.L., Page, A.L., Helmke, P.A., Loeppert, R.H., Soltanpour, P.N., Tabatabai, M.A., Johnston, C.T. & Sumner, M.E., Eds., Methods of Soil Analysis. Part 3. Chemical Methods, Soil Science Society of America, Madison, WI, 961-1010.

@@ -1,0 +1,100 @@
+SC.93 Dataset
+=============
+
+Description
+-----------
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: vis-NIR 
+* Sample size: 93
+* Number of Features: 2,146
+* Coordinates: With coordinates (EPSG: 32722)
+* Location: Santa Catarina, Brazil
+* Sampling Design: conditioned Latin Hypercube Sampling based on terrain parameters
+* Study Area Size: 108 ha
+* Geological Setting: Heavily weathered soils originating from volcanic rock of the Serra Geral Formation (basalt, dacit)
+* Previous Data Publication: None
+* Contact Information:
+    * Taciara Zborowski Horst (taciaraz@utfpr.edu.br), Federal University of Technology – Paraná
+    * Ricardo Simão Diniz Dalmolin (dalmolin@ufsm.br), Federal University of Santa Maria
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+Dataset
+^^^^^^^
+The SC.93 dataset contains soil measurements and features organized in a dataframe with the following properties:
+
+Target Soil Properties:
+
+SOC - Soil Organic Carbon
+    * Code: ``SOC_target``
+    * Unit: %
+    * Protocol: Measured through light absorption after oxidization of the organic carbon in suspension (Tedesco et al. 1995)
+    * Sampling Date: December 2016
+    * Sampling Depth: 0 - 20 cm
+
+pH
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode ratio with a 1:1 liquid:soil volumetric ratio
+    * Sampling Date: December 2016
+    * Sampling Depth: 0 - 20 cm
+
+Clay
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water (Gee and Bauder 1986)
+    * Sampling Date: December 2016
+    * Sampling Depth: 0 - 20 cm
+
+Groups of Features:
+
+vis-NIR – Visible and Near Infrared Spectroscopy
+    * Number Features: 2,146
+    * Code(s): ``wl_355, wl_356, wl_357`` ... ``wl_2500``
+    * Unit: % (Reflectance)
+    * Sensing: ASD FieldSpec 4 (Analytical Spectral Devices Inc., Boulder, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 355 - 2,500 nm at 3 - 8 nm spectral resolution
+    * Processing: Resampling to 1 nm intervals
+    * Sampling Date: March 2017
+    * Spectral Information (after data processing):
+        * Data Representation: Wavelength (in nm)
+        * Spectral Resolution: 1 nm
+        * Spectral Range: 355 – 2500 nm
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("SC.93")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+    # Visualize soil properties
+    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
+    soil_map.save("SC93_pH_map.html")
+
+References
+----------
+
+Gee, G.W. & Bauder, J.W. (1986) Particle-Size Analysis. In: Klute, A., Ed., Methods of Soil Analysis, Part 1. Physical and Mineralogical Methods, Agronomy Monograph No. 9, 2nd Edition, American Society of Agronomy/Soil Science Society of America, Madison, WI, 383-411.
+
+Tedesco, M.J., Gianello, C., Bissani, C., Bohnen, H. & Volkweiss, S.J. (1995) Análise de solo, plantas e outros materiais. [Analysis of soil, plants and other materials.] 2nd Edition, Departamento de Solos da Universidade Federal do Rio Grande do Sul, Porto Alegre, 174.

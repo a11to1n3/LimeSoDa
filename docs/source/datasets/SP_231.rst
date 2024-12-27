@@ -1,0 +1,95 @@
+SP.231 Dataset
+==============
+
+Description
+-----------
+* Target Soil Properties: SOM, pH, Clay
+* Groups of Features: vis-NIR 
+* Sample size: 231
+* Number of Features: 271
+* Coordinates: With coordinates (EPSG: 32654)
+* Location: Saitama Prefecture, Japan
+* Sampling Design: Two sampling designs over multiple fields depending on the soil conditions: (1) Systematic Sampling, in which samples are taken in the corners and middle of the field and (2) Fully Random Sampling
+* Study Area Size: 3.1 ha
+* Geological Setting: Silandic Andosols
+* Previous Data Publication: None
+* Contact Information:
+    * Masakazu Kodaira (kodaira@cc.tuat.ac.jp), Tokyo University of Agriculture and Technology
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+The dataset contains the following target soil properties and features:
+
+Target Soil Properties:
+
+SOM - Soil Organic Matter
+    * Code: ``SOM_target``
+    * Unit: %
+    * Protocol: Measured through the weight difference before and after ignition
+    * Sampling Date: February 2017, December 2017 and February 2018
+    * Sampling Depth: 0 - 15 cm
+
+pH
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode with a 2.5:1 liquid:soil gravimetric ratio
+    * Sampling Date: February 2017, December 2017 and February 2018
+    * Sampling Depth: 0 - 15 cm
+
+Clay
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water (Gee and Bauder 1986)
+    * Sampling Date: February 2017, December 2017 and February 2018
+    * Sampling Depth: 0 - 15 cm
+
+Groups of Features:
+
+vis-NIR – Visible and Near Infrared Spectroscopy
+    * Number Features: 271
+    * Code(s): ``wl_350, wl_355, wl_360`` ... ``wl_1700``
+    * Unit: % (Reflectance)
+    * Sensing: mounted vis-NIR spectrometer (SAS3000, Shibuya Seiki Co. Ltd., Ehime Prefecture, Japan), in-situ, spectral range was 320 – 1,700 nm at 1 - 7 nm intervals [?metadata per email said 0.33 to 1.56 nm but in the paper it says 1 to 7 nm, which is correct?]
+    * Processing: Discarding noisy edges of the spectrum (320 - 350 nm), resampling to 5 nm intervals
+    * Sampling Date: February 2017, December 2017 and February 2018
+    * Spectral Information (after data processing):
+        * Data Representation: Wavelength (in nm)
+        * Spectral Resolution: 1 nm
+        * Spectral Range: 350 - 1,700 nm
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("SP.231")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOM_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+    # Visualize soil properties
+    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
+    soil_map.save("SP231_pH_map.html")
+
+References
+----------
+
+Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.

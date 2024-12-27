@@ -1,0 +1,97 @@
+CV.98 Dataset
+=============
+
+Description
+-----------
+
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: vis-NIR 
+* Sample size: 98
+* Number of Features: 2,151
+* Coordinates: Without coordinates because dataset was not georeferenced
+* Location: Canton of Vaud, Switzerland
+* Sampling Design: Stratified Random Sampling based on different treatments of organic amendments, fertilization, crop rotation and soil cultivation
+* Study Area Size: 28 ha
+* Geological Setting: Glacial or fluvioglacial deposits
+* Previous Data Publication: Full dataset published in Metzger et al. (2024) but under embargo until June 2025
+* Contact Information:
+    * Konrad Metzger (konrad.metzger@agroscope.admin.ch), Agroscope
+    * Luca Bragazza (luca.bragazza@agroscope.admin.ch), Agroscope
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+The CV.98 dataset contains tabular data with the following target soil properties and features:
+
+Target Soil Properties:
+""""""""""""""""""""""
+* SOC - Soil Organic Carbon
+    * Code: SOC_target
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
+    * Sampling Date: May - June and September - October 2021
+    * Sampling Depth: 0 - 20 cm
+
+* pH
+    * Code: pH_target
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (NF ISO 10390)
+    * Sampling Date: May - June and September - October 2021
+    * Sampling Depth: 0 - 20 cm
+
+* Clay
+    * Code: Clay_target
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water (Gee and Bauder 1986)
+    * Sampling Date: May - June and September - October 2021
+    * Sampling Depth: 0 - 20 cm
+
+Groups of Features:
+"""""""""""""""""
+* vis-NIR – Visible and Near Infrared Spectroscopy
+    * Number Features: 2,151
+    * Code(s): wl_350, wl_351, wl_352 ... wl_2500
+    * Unit: % (Reflectance)
+    * Sensing: vis-NIR spectrometer (PSR+3500, Spectral Evolution, Haverhill, USA), in-situ from Edelman auger (denoted as scantype = a in original dataset publication), spectral range was 350 - 2500 nm at 3 - 8 nm spectral resolution
+    * Processing: Resampling to 1 nm intervals
+    * Sampling Date: May - June and September - October 2021
+    * Spectral Information (after data processing):
+        * Data Representation: Wavelength (in nm)
+        * Spectral Resolution: 1 nm
+        * Spectral Range: 350 – 2500 nm
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("CV.98")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]  # Note: No coordinates available for this dataset
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+References
+----------
+
+Gee, G.W. & Bauder, J.W. (1986) Particle-Size Analysis. In: Klute, A., Ed., Methods of Soil Analysis, Part 1. Physical and Mineralogical Methods, Agronomy Monograph No. 9, 2nd Edition, American Society of Agronomy/Soil Science Society of America, Madison, WI, 383-411.
+
+Metzger, K., Liebisch, F., Herrera, J. M., Guillaume, T., Walder, F. & Bragazza, L. (2024). Agroscope_SoilSpectralLibrary _2024. Zenodo repository. https://doi.org/10.5281/zenodo.11204174
+
+Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.

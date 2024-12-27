@@ -1,0 +1,93 @@
+NRW.62 Dataset
+=============
+
+Description
+-----------
+
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: MIR
+* Sample size: 62
+* Number of Features: 1,686
+* Coordinates: Without coordinates because of privacy concerns
+* Location: North Rhine-Westphalia, Germany
+* Sampling Design: Stratified Systematic Sampling by sampling rectangular plots which received different fertilizer dosages, samples were taken in the center of the plots
+* Study Area Size: 0.6 ha
+* Geological Setting: Pleistocene periglacial slope deposits consisting of weathered sand- and claystones from the Upper Bunter sandstone
+* Previous Data Publication: None
+* Contact Information:
+    * Stefan Paetzold (s.paetzold@uni-bonn.de), University of Bonn
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+The dataset contains the following target soil properties and features:
+
+Target Soil Properties:
+
+SOC - Soil Organic Carbon
+* Code: SOC_target
+* Unit: %
+* Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO2 release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
+* Sampling Date: November 2017
+* Sampling Depth: 0 - 30 cm
+
+pH
+* Code: pH_target
+* Unit: Unitless
+* Protocol: Measured in CaCl2 suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (DIN ISO 10390)
+* Sampling Date: November 2017
+* Sampling Depth: 0 - 30 cm
+
+Clay
+* Code: Clay_target
+* Unit: %
+* Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, German adaption (DIN ISO 11277)
+* Sampling Date: November 2017
+* Sampling Depth: 0 - 30 cm
+
+Groups of Features:
+
+MIR – Mid Infrared Spectroscopy
+* Number Features: 1,686
+* Code(s): wn_3799, wn_3797.1, wn_3795.1 ... wn_549.6
+* Unit: % (Reflectance)
+* Sensing: MIR spectrometer (Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 – 549.6 cm^-1 at 4 cm^-1 intervals
+* Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 3,799 cm^-1), resampling to ~2 cm^-1 intervals
+* Sampling Date: November 2017
+* Spectral Information (after data processing):
+    * Data Representation: Wavenumber (in cm^-1)
+    * Spectral Resolution: ~ 2 cm^-1
+    * Spectral Range: 3,799 - 549.6 cm^-1
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("NRW.62")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+References
+----------
+
+Gee, G.W. & Bauder, J.W. (1986) Particle-Size Analysis. In: Klute, A., Ed., Methods of Soil Analysis, Part 1. Physical and Mineralogical Methods, Agronomy Monograph No. 9, 2nd Edition, American Society of Agronomy/Soil Science Society of America, Madison, WI, 383-411.
+
+Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.

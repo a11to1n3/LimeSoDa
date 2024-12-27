@@ -1,0 +1,131 @@
+SA.112 Dataset
+==============
+
+Description
+-----------
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: DEM, ERa, Gamma, NIR, pH-ISE, VI
+* Sample size: 112
+* Number of Features: 1,412
+* Coordinates: Without coordinates because of privacy concerns
+* Location: Saxony-Anhalt, Germany
+* Sampling Design: Regular Grid Sampling but with missing values in the center of the field
+* Study Area Size: 27 ha
+* Previous Data Publication: None
+* Geological Setting: Weichselian loess
+* Contact Information:
+    * Stefan Paetzold (s.paetzold@uni-bonn.de), University of Bonn
+    * Hamed Tavakoli (HTavakoli@atb-potsdam.de), Leibniz Institute for Agricultural Engineering and Bioeconomy (ATB)
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 0.1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+Target Soil Properties:
+
+SOC - Soil Organic Carbon
+* Code: SOC_target
+* Unit: %
+* Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO₂ release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
+* Sampling Date: October 2016
+* Sampling Depth: 0 - 30 cm
+
+pH
+* Code: pH_target
+* Unit: Unitless
+* Protocol: Measured in a water suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (DIN ISO 10390)
+* Sampling Date: October 2016
+* Sampling Depth: 0 - 30 cm
+
+Clay
+* Code: Clay_target
+* Unit: %
+* Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, German adaption (DIN ISO 11277)
+* Sampling Date: October 2016
+* Sampling Depth: 0 - 30 cm
+
+Groups of Features:
+
+DEM – Digital Elevation Model and Terrain Parameters
+* Number Features: 2
+* Code(s): Altitude, Slope
+* Unit: Altitude in m, Slope in °
+* Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from "GeoBasis-DE / LVermGeo ST"
+* Processing: Calculating Slope with terrain function of the raster package, extracting DEM values from raster at soil sampling locations
+* Sampling Date: Unknown
+
+ERa – Apparent Electrical Resistivity
+* Number Features: 1
+* Code(s): ERa
+* Unit: Ω m
+* Sensing: Array of multiple rolling electrodes (Geophilus company, Caputh, Germany) on RapidMapper platform with exploration depth of 0 - 50 cm, in-situ
+* Processing: Ordinary Kriging to align sensing- with soil sampling locations
+* Sampling Date: August 2021
+
+Gamma
+* Number Features: 5
+* Code(s): G_Total_Counts, G_K, G_U, G_Th, G_Cs
+* Unit: Unitless
+* Sensing: Passive gamma sensor (MS-2000-CsI-MTS, Medusa Radiometrics BV, Groningen, Netherlands) on RapidMapper platform, in-situ
+* Processing: Ordinary Kriging to align sensing- with soil sampling locations
+* Sampling Date: August 2021
+
+NIR – Near Infrared Spectroscopy
+* Number Features: 1,401
+* Code(s): wl_1000, wl_1001, wl_1002 ... wl_2400
+* Unit: % (Reflectance)
+* Sensing: NIR spectrometer (C11118GA, Hamamatsu Photonics K.K., Shizuoka Prefecture, Japan) on RapidMapper platform, in-situ, spectral range was 900 - 2550 nm at 15 nm intervals
+* Processing: Kriging to align sensing- with soil sampling locations, discarding noisy edges of the spectrum (900 - 1,000 nm & 2,400 - 2,550 nm), resampling to 1 nm intervals
+* Sampling Date: August 2021
+* Spectral Information (after data processing):
+    * Data Representation: Wavelength (in nm)
+    * Spectral Resolution: 1 nm
+    * Spectral Range: 1,000 - 2,400 nm
+
+pH-ISE – Ion Selective Electrodes for pH Determination
+* Number Features: 1
+* Code(s): pH-ISE
+* Unit: Unitless
+* Sensing: Soil pH Manager (VERIS Technologies, Salinas, USA) on RapidMapper platform, in-situ
+* Processing: Ordinary Kriging to align sensing- with soil sampling locations
+* Sampling Date: August 2021
+
+VI - Vegetation Indices
+* Number Features: 2
+* Code(s): NDVI, GNDVI
+* Unit: Unitless
+* Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
+* Processing: Calculating NDVI as (B08 - B04) / (B08 + B04) and GNDVI as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
+* Sampling Date: April 2018
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("SA.112")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+References
+----------
+
+Gee, G.W. & Bauder, J.W. (1986) Particle-Size Analysis. In: Klute, A., Ed., Methods of Soil Analysis, Part 1. Physical and Mineralogical Methods, Agronomy Monograph No. 9, 2nd Edition, American Society of Agronomy/Soil Science Society of America, Madison, WI, 383-411.
+
+Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.
