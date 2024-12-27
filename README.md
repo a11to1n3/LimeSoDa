@@ -1,5 +1,8 @@
 # pyLimeSoDa
 
+[![Python Package](https://github.com/a11to1n3/pyLimeSoDa/actions/workflows/python-package.yml/badge.svg)](https://github.com/a11to1n3/pyLimeSoDa/actions/workflows/python-package.yml)
+[![codecov](https://codecov.io/gh/a11to1n3/pyLimeSoDa/branch/main/graph/badge.svg)](https://codecov.io/gh/a11to1n3/pyLimeSoDa)
+
 **Lime.SoDa** is an R Package and this is its Python counterpart, **pyLimeSoDa**. It offers field- and farm-scale datasets tailored for digital soil mapping. Each dataset encompasses essential target soil properties—SOC/SOM, pH, and clay—alongside comprehensive spectral features, ready for immediate modeling applications.
 
 ## Installation
