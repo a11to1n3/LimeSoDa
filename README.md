@@ -156,7 +156,7 @@ pyLimeSoDa includes a diverse collection of datasets, each varying in sample siz
 | UL.120 | 120 | SOM, pH, Clay | ERa, vis-NIR | EPSG:4326 (dummy) |
 | W.50 | 50 | SOC, pH, Clay | DEM, ERa, VI, XRF | NA |
 
-Each dataset comprises:
+Datasets comprise:
 
 - **Main Dataset**: Contains soil properties and features
 - **Validation Folds**: Pre-defined 10-fold cross-validation splits
