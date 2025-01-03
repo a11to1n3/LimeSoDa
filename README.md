@@ -130,10 +130,11 @@ pyLimeSoDa includes a diverse collection of datasets, each varying in sample siz
 | BB.30_2 | 30 | SOC, pH, Clay | DEM, ERa, Gamma, RSS, VI | EPSG:32723 |
 | BB.51 | 51 | SOC, pH, Clay | DEM, ERa, pH-ISE | EPSG:25833 |
 | BB.72 | 72 | SOC, pH, Clay | DEM, ERa, Gamma, pH-ISE, RSS, VI | NA |
-| BC.58 | 58 | SOC, pH, Clay | (To be dropped) | NA |
 | CV.98 | 98 | SOC, pH, Clay | vis-NIR | NA |
 | G.104 | 104 | SOC, pH, Clay | DEM, RSS, VI | EPSG:32722 |
+| G.150 | 150 | SOC, pH, Clay | DEM, ERa, RSS, VI | EPSG:32722 |
 | H.138 | 138 | SOC, pH, Clay | MIR | EPSG:32649 |
+| MG.112 | 112 | SOC, pH, Clay |  DEM, ERa, RSS, VI | EPSG:32721 |
 | MG.44 | 44 | SOC, pH, Clay | vis-NIR | EPSG:32721 |
 | MGS.101 | 101 | SOC, pH, Clay | DEM, RSS, VI | EPSG:32721 |
 | MWP.36 | 36 | SOC, pH, Clay | DEM, RSS | NA |
@@ -145,9 +146,15 @@ pyLimeSoDa includes a diverse collection of datasets, each varying in sample siz
 | PC.45 | 45 | SOC, pH, Clay | CSMoist, ERa | NA |
 | RP.62 | 62 | SOC, pH, Clay | ERa, Gamma, NIR, pH-ISE, VI | NA |
 | SA.112 | 112 | SOC, pH, Clay | DEM, ERa, Gamma, NIR, pH-ISE, VI | NA |
- SC.50 | 50 | SOC, pH, Clay | DEM, ERa | EPSG:32722 |
+| SC.50 | 50 | SOC, pH, Clay | DEM, ERa | EPSG:32722 |
 | SC.93 | 93 | SOC, pH, Clay | vis-NIR | EPSG:32722 |
 | SL.125 | 125 | SOM, pH, Clay | ERa, vis-NIR | EPSG:4326 (dummy) |
+| SM.40 | 40 | SOC, pH, Clay | DEM, ERa | EPSG:32633 |
+| SP.231 | 125 | SOM, pH, Clay | vis-NIR | EPSG:32654 |
+| SSP.460 | 460 | SOC, pH, Clay | vis-NIR | NA |
+| SSP.58 | 58 | SOC, pH, Clay | vis-NIR | NA |
+| UL.120 | 120 | SOM, pH, Clay | ERa, vis-NIR | EPSG:4326 (dummy) |
+| W.50 | 50 | SOC, pH, Clay | DEM, ERa, VI, XRF | NA |
 
 Each dataset comprises:
 
