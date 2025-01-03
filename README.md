@@ -3,7 +3,7 @@
 [![Python Package](https://github.com/a11to1n3/pyLimeSoDa/actions/workflows/python-package.yml/badge.svg)](https://github.com/a11to1n3/pyLimeSoDa/actions/workflows/python-package.yml)
 [![codecov](https://codecov.io/gh/a11to1n3/pyLimeSoDa/branch/main/graph/badge.svg)](https://codecov.io/gh/a11to1n3/pyLimeSoDa)
 
-**Lime.SoDa** is an R Package and this is its Python counterpart, **pyLimeSoDa**. It offers field- and farm-scale datasets tailored for digital soil mapping. Each dataset encompasses essential target soil properties—SOC/SOM, pH, and clay—alongside comprehensive spectral features, ready for immediate modeling applications.
+Precision Liming Soil Datasets (Lime.SoDa) is a collection of datasets from a field- and farm-scale soil mapping context and this is the associated python dataset package **pyLimeSoDa**. These datasets are 'ready-to-go' for modeling purposes, as they contain target soil properties and features in a tabular format. Target soil properties for all datasets are; soil organic matter (SOM) or -carbon (SOC), pH and clay, while the features for modeling are dataset-specific. The goal of `Lime.SoDa` is to enable more reliable benchmarking and comparison of various modeling approaches in Digital Soil Mapping and Pedometrics by providing an open collection of multiple datasets. 
 
 ## Installation
 
@@ -158,25 +158,32 @@ pyLimeSoDa includes a diverse collection of datasets, each varying in sample siz
 
 Each dataset comprises:
 
-- **Main Dataset**: Contains soil properties and spectral features
+- **Main Dataset**: Contains soil properties and features
 - **Validation Folds**: Pre-defined 10-fold cross-validation splits
 - **Coordinates**: Provided where available
 
 ## Features
+Features in the dataset 
 
-- **Standardized Access**: Uniform interface across all datasets
-- **Spectral Data Handling**: Built-in functions for spectral data extraction and visualization
-- **Cross-Validation**: Pre-defined folds to ensure consistent benchmarking
-- **Utility Functions**: Streamlined operations for common tasks
-- **Extensibility**: Easily integrate with various modeling workflows
+- **CSMoisture**: Capacitive soil moisture 
+- **DEM**: Digital elevation model and terrain parameters 
+- **ERa**: Apparent electrical resistivity
+- **Gamma**: Gamma-ray activity
+- **MIR**: Mid infrared spectroscopy 
+- **NIR**: Near infrared spectroscopy 
+- **pH-ISE**: Ion selective electrodes for pH determination
+- **RSS**: Remote sensing derived spectral data 
+- **XRF**: X-ray fluorescence derived elemental concentrations 
+- **VI**: Vegetation Indices 
+- **vis-NIR**: Visible- and near infrared spectroscopy 
 
 ## Documentation
 
-Comprehensive documentation and usage examples are available in the [examples](examples/) directory. Explore detailed guides to maximize the utility of Lime.SoDa in your projects.
+Comprehensive documentation and usage examples are available in the [examples](examples/) directory.
 
 ## Citation
 
-If you utilize this package in your research, please cite:
+If you utilize this package in your research, please cite the associated paper:
 
 ```bibtex
 @article{schmidinger2025limesoda,
@@ -189,9 +196,8 @@ If you utilize this package in your research, please cite:
 
 ## License
 
-Lime.SoDa is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Lime.SoDa is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Contributing
 
 We welcome contributions! Feel free to submit a [Pull Request](https://github.com/JonasSchmidinger/pyLimeSoDa/pulls) to enhance Lime.SoDa.
-```
