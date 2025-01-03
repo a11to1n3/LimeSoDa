@@ -3,7 +3,7 @@
 [![Python Package](https://github.com/a11to1n3/pyLimeSoDa/actions/workflows/python-package.yml/badge.svg)](https://github.com/a11to1n3/pyLimeSoDa/actions/workflows/python-package.yml)
 [![codecov](https://codecov.io/gh/a11to1n3/pyLimeSoDa/branch/main/graph/badge.svg)](https://codecov.io/gh/a11to1n3/pyLimeSoDa)
 
-Precision Liming Soil Datasets (Lime.SoDa) is a collection of datasets from a field- and farm-scale soil mapping context and this is the associated python dataset package **pyLimeSoDa**. These datasets are 'ready-to-go' for modeling purposes, as they contain target soil properties and features in a tabular format. Target soil properties for all datasets are; soil organic matter (SOM) or -carbon (SOC), pH and clay, while the features for modeling are dataset-specific. The goal of `Lime.SoDa` is to enable more reliable benchmarking and comparison of various modeling approaches in Digital Soil Mapping and Pedometrics by providing an open collection of multiple datasets. 
+Precision Liming Soil Datasets (Lime.SoDa) is a collection of datasets from a field- and farm-scale soil mapping context and this is the associated python dataset package **pyLimeSoDa**. These datasets are 'ready-to-go' for modeling purposes, as they contain target soil properties and features in a tabular format. Target soil properties for all datasets are; soil organic matter (SOM) or -carbon (SOC), pH and clay, while the features for modeling are dataset-specific. The goal of Lime.SoDa is to enable more reliable benchmarking and comparison of various modeling approaches in Digital Soil Mapping and Pedometrics by providing an open collection of multiple datasets. 
 
 ## Installation
 
