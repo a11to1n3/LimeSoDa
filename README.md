@@ -165,17 +165,19 @@ Datasets comprise:
 ## Features
 The following groups of features are present in datasets of LimeSoDa:
 
-- **CSMoisture**: Capacitive soil moisture 
-- **DEM**: Digital elevation model and terrain parameters 
-- **ERa**: Apparent electrical resistivity
-- **Gamma**: Gamma-ray activity
-- **MIR**: Mid infrared spectroscopy 
-- **NIR**: Near infrared spectroscopy 
-- **pH-ISE**: Ion selective electrodes for pH determination
-- **RSS**: Remote sensing derived spectral data 
-- **XRF**: X-ray fluorescence derived elemental concentrations 
-- **VI**: Vegetation Indices 
-- **vis-NIR**: Visible- and near infrared spectroscopy 
+- Capacitive soil moisture sensor (CSMoisture)
+- Digital elevation model and terrain parameters (DEM)
+- Apparent electrical resistivity (ERa)
+- Gamma-ray activity (Gamma)
+- Mid infrared spectroscopy (MIR)
+- Near infrared spectroscopy (NIR)
+- Ion selective electrodes for pH determination (pH-ISE)
+- Remote sensing derived spectral data (RSS)
+- X-ray fluorescence derived elemental concentrations (XRF)
+- Vegetation Indices (VI)
+- Visible- and near infrared spectroscopy (vis-NIR)
+
+
 
 ## Documentation
 
