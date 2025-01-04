@@ -7,42 +7,43 @@ import pytest
 src_path = Path(__file__).parent.parent / "src"
 sys.path.append(str(src_path))
 
-from pyLimeSoDa.loaders import *
-from pyLimeSoDa.utils import *
+from LimeSoDa.loaders import *
+from LimeSoDa.utils import *
 
 @pytest.fixture
 def loader_list():
     return [
-        (load_B_204, "B_204"),
-        (load_BB_30_1, "BB_30_1"),
-        (load_BB_30_2, "BB_30_2"), 
-        (load_BB_51, "BB_51"),
-        (load_BB_72, "BB_72"),
-        (load_BB_250, "BB_250"),
-        (load_BC_58, "BC_58"),
-        (load_CV_98, "CV_98"),
-        (load_G_104, "G_104"),
-        (load_H_138, "H_138"),
-        (load_MG_44, "MG_44"),
-        (load_MGS_101, "MGS_101"),
-        (load_MWP_36, "MWP_36"),
-        (load_NRW_42, "NRW_42"),
-        (load_NRW_62, "NRW_62"),
-        (load_NRW_115, "NRW_115"),
-        (load_NSW_52, "NSW_52"),
-        (load_O_32, "O_32"),
-        (load_PC_45, "PC_45"),
-        (load_RP_62, "RP_62"),
-        (load_SA_112, "SA_112"),
-        (load_SC_50, "SC_50"),
-        (load_SC_93, "SC_93"),
-        (load_SL_125, "SL_125"),
-        (load_SM_40, "SM_40"),
-        (load_SP_231, "SP_231"),
-        (load_SSP_58, "SSP_58"),
-        (load_SSP_460, "SSP_460"),
-        (load_UL_120, "UL_120"),
-        (load_W_50, "W_50")
+        (lambda: load_dataset(name="BB.250"), "BB.250"),
+        (lambda: load_dataset(name="BB.30_1"), "BB.30_1"),
+        (lambda: load_dataset(name="BB.30_2"), "BB.30_2"),
+        (lambda: load_dataset(name="BB.51"), "BB.51"),
+        (lambda: load_dataset(name="BB.72"), "BB.72"),
+        (lambda: load_dataset(name="B.204"), "B.204"),
+        (lambda: load_dataset(name="CV.98"), "CV.98"),
+        (lambda: load_dataset(name="G.104"), "G.104"),
+        (lambda: load_dataset(name="G.150"), "G.150"),
+        (lambda: load_dataset(name="H.138"), "H.138"),
+        (lambda: load_dataset(name="MG.44"), "MG.44"),
+        (lambda: load_dataset(name="MG.112"), "MG.112"),
+        (lambda: load_dataset(name="MGS.101"), "MGS.101"),
+        (lambda: load_dataset(name="MWP.36"), "MWP.36"),
+        (lambda: load_dataset(name="NRW.42"), "NRW.42"),
+        (lambda: load_dataset(name="NRW.62"), "NRW.62"),
+        (lambda: load_dataset(name="NRW.115"), "NRW.115"),
+        (lambda: load_dataset(name="NSW.52"), "NSW.52"),
+        (lambda: load_dataset(name="O.32"), "O.32"),
+        (lambda: load_dataset(name="PC.45"), "PC.45"),
+        (lambda: load_dataset(name="RP.62"), "RP.62"),
+        (lambda: load_dataset(name="SA.112"), "SA.112"),
+        (lambda: load_dataset(name="SC.50"), "SC.50"),
+        (lambda: load_dataset(name="SC.93"), "SC.93"),
+        (lambda: load_dataset(name="SL.125"), "SL.125"),
+        (lambda: load_dataset(name="SM.40"), "SM.40"),
+        (lambda: load_dataset(name="SP.231"), "SP.231"),
+        (lambda: load_dataset(name="SSP.58"), "SSP.58"),
+        (lambda: load_dataset(name="SSP.460"), "SSP.460"),
+        (lambda: load_dataset(name="UL.120"), "UL.120"),
+        (lambda: load_dataset(name="W.50"), "W.50")
     ]
 
 def test_loader(loader_list):

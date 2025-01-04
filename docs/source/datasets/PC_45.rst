@@ -27,46 +27,46 @@ Details
 Target Soil Properties:
 
 SOC - Soil Organic Carbon
-* Code: SOC_target
-* Unit: %
-* Protocol: Measured through titration after oxidization of the organic carbon (Tyurin 1935)
-* Sampling Date: November 2004
-* Sampling Depth: 0 – 20 cm
+    * Code: SOC_target
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon (Tyurin 1935)
+    * Sampling Date: November 2004
+    * Sampling Depth: 0 – 20 cm
 
 pH
-* Code: pH_target
-* Unit: Unitless
-* Protocol: Measured in water suspension with a glass electrode with a 2.5:1 liquid:soil volumetric ratio (MSz-08-0206/2-1978)
-* Sampling Date: November 2004
-* Sampling Depth: 0 – 20 cm
+    * Code: pH_target
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode with a 2.5:1 liquid:soil volumetric ratio (MSz-08-0206/2-1978)
+    * Sampling Date: November 2004
+    * Sampling Depth: 0 – 20 cm
 
 Clay
-* Code: Clay_target
-* Unit: %
-* Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, Hungarian adaption (MSZ-08-0205-1978)
-* Sampling Date: November 2004
-* Sampling Depth: 0 – 20 cm
+    * Code: Clay_target
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, Hungarian adaption (MSZ-08-0205-1978)
+    * Sampling Date: November 2004
+    * Sampling Depth: 0 – 20 cm
 
 Groups of Features:
 
 CSMoist – Capacitive Soil Moisture
-* Number Features: 1
-* Code(s): CSMoist
-* Unit: % (volumetric moisture content)
-* Sensing: Capacitive soil moisture sensor (BR-30, Research Institute of Soil Science and Agricultural Chemistry, Hungary, Budapest) with exploration depth of 10 cm, in-situ
-* Processing: None
-* Sampling Date: November 2004
+    * Number Features: 1
+    * Code(s): CSMoist
+    * Unit: % (volumetric moisture content)
+    * Sensing: Capacitive soil moisture sensor (BR-30, Research Institute of Soil Science and Agricultural Chemistry, Hungary, Budapest) with exploration depth of 10 cm, in-situ
+    * Processing: None
+    * Sampling Date: November 2004
 
 ERa – Apparent Electrical Resistivity
-* Number Features: 3
-* Code(s): ERa_EM, ERa_ERS, ERa_P
-* Unit: Ω m
-* Sensing: Three different devices
-    * ERa_EM from Electromagnetic induction sensor (EMRC-120, Geoelectro, Nagykovácsi, Hungary) with exploration depth of 100 cm, in-situ
-    * ERa_ERS from four electrode resistivity sensors (Martek SCT, Martek Instruments Inc., USA, Raleigh) with exploration depth of 20 cm, in-situ
-    * ERa_P from Dielectric probe (Percometer, Adek ltd, Estonia, Tiskre) with exploration depth of 10 to 50 cm, in-situ
-* Processing: None
-* Sampling Date: November 2004
+    * Number Features: 3
+    * Code(s): ERa_EM, ERa_ERS, ERa_P
+    * Unit: Ω m
+    * Sensing: Three different devices
+        * ERa_EM from Electromagnetic induction sensor (EMRC-120, Geoelectro, Nagykovácsi, Hungary) with exploration depth of 100 cm, in-situ
+        * ERa_ERS from four electrode resistivity sensors (Martek SCT, Martek Instruments Inc., USA, Raleigh) with exploration depth of 20 cm, in-situ
+        * ERa_P from Dielectric probe (Percometer, Adek ltd, Estonia, Tiskre) with exploration depth of 10 to 50 cm, in-situ
+    * Processing: None
+    * Sampling Date: November 2004
 
 Examples
 --------

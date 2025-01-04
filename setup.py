@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="pyLimeSoDa",
+    name="LimeSoDa",
     version="0.1.0", 
     author="Jonas Schmidinger",
     author_email="jonas.schmidinger@uni-osnabrueck.de",
     description="Precision Liming Soil Datasets (Lime.SoDa) for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/a11to1n3/pyLimeSoDa",
+    url="https://github.com/a11to1n3/LimeSoDa",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     classifiers=[
@@ -43,7 +43,7 @@ setup(
         ]
     },
     package_data={
-        "pyLimeSoDa": ["data/*.pkl"],
+        "LimeSoDa": ["data/*.pkl"],
     },
     include_package_data=True,
 )

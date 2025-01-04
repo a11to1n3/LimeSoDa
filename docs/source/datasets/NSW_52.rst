@@ -30,43 +30,43 @@ The dataset contains the following target soil properties and features:
 Target Soil Properties:
 
 SOC - Soil Organic Carbon
-* Code: SOC_target
-* Unit: %
-* Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
-* Sampling Date: July 2018 & December 2018
-* Sampling Depth: 0 - 10 cm
+    * Code: SOC_target
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
+    * Sampling Date: July 2018 & December 2018
+    * Sampling Depth: 0 - 10 cm
 
 pH
-* Code: pH_target
-* Unit: Unitless
-* Protocol: Measured in CaCl2 suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio
-* Sampling Date: July 2018 & December 2018
-* Sampling Depth: 0 - 10 cm
+    * Code: pH_target
+    * Unit: Unitless
+    * Protocol: Measured in CaCl2 suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio
+    * Sampling Date: July 2018 & December 2018
+    * Sampling Depth: 0 - 10 cm
 
 Clay
-* Code: Clay_target
-* Unit: %
-* Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water (Gee and Bauder 1986)
-* Sampling Date: July 2018 & December 2018
-* Sampling Depth: 0 - 10 cm
+    * Code: Clay_target
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water (Gee and Bauder 1986)
+    * Sampling Date: July 2018 & December 2018
+    * Sampling Depth: 0 - 10 cm
 
 Groups of Features:
 
 DEM – Digital Elevation Model and Terrain Parameters
-* Number Features: 2
-* Code(s): Altitude, Slope
-* Unit: Altitude in m, Slope in °
-* Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from the "Elevation and Depth – Foundation Spatial Data (ELVIS)"
-* Processing: Calculating Slope with terrain function of the raster package, extracting DEM values from raster at soil sampling locations
-* Sampling Date: April 2016
+    * Number Features: 2
+    * Code(s): Altitude, Slope
+    * Unit: Altitude in m, Slope in °
+    * Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from the "Elevation and Depth – Foundation Spatial Data (ELVIS)"
+    * Processing: Calculating Slope with terrain function of the raster package, extracting DEM values from raster at soil sampling locations
+    * Sampling Date: April 2016
 
 RSS – Remote Sensing Derived Spectral Data
-* Number Features: 3
-* Code(s): B02, B8A, B11
-* Unit: Unitless
-* Sensing: Sentinel-2 bare soil Image (Level-2A) from "Copernicus Open Access Hub", with bands of 10 - 20 m spatial resolution
-* Processing: Extracting RSS values from raster at soil sampling locations, selecting bands spread throughout the spectral range with lower intercorrelation
-* Sampling Date: July 2018
+    * Number Features: 3
+    * Code(s): B02, B8A, B11
+    * Unit: Unitless
+    * Sensing: Sentinel-2 bare soil Image (Level-2A) from "Copernicus Open Access Hub", with bands of 10 - 20 m spatial resolution
+    * Processing: Extracting RSS values from raster at soil sampling locations, selecting bands spread throughout the spectral range with lower intercorrelation
+    * Sampling Date: July 2018
 
 Examples
 --------

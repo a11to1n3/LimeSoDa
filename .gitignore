@@ -19,6 +19,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+src/LimeSoDa/data/*.py
 
 # Virtual Environment
 .env

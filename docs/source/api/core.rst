@@ -1,7 +1,7 @@
 Core Module
 ===========
 
-.. automodule:: pyLimeSoDa
+.. automodule:: LimeSoDa
    :members:
    :undoc-members:
    :show-inheritance:
@@ -9,12 +9,12 @@ Core Module
 Main Functions
 --------------
 
-.. autofunction:: pyLimeSoDa.load_dataset
+.. autofunction:: LimeSoDa.load_dataset
 
-.. autofunction:: pyLimeSoDa.list_datasets
+.. autofunction:: LimeSoDa.list_datasets
 
 Constants
 ---------
 
-.. autodata:: pyLimeSoDa.__version__
-   :annotation: The current version of pyLimeSoDa
+.. autodata:: LimeSoDa.__version__
+   :annotation: The current version of LimeSoDa

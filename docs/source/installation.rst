@@ -4,7 +4,7 @@ Installation
 Requirements
 ------------
 
-pyLimeSoDa requires Python 3.8 or later. It also depends on the following Python packages:
+LimeSoDa requires Python 3.8 or later. It also depends on the following Python packages:
 
 - numpy >= 1.23.0
 - seaborn >= 0.11.0
@@ -23,29 +23,29 @@ Optional development dependencies:
 Installing with pip
 -------------------
 
-You can install pyLimeSoDa using pip:
+You can install LimeSoDa using pip:
 
 .. code-block:: bash
 
-   pip install pyLimeSoDa
+   pip install LimeSoDa
 
 For development dependencies:
 
 .. code-block:: bash
 
-   pip install pyLimeSoDa[dev]
+   pip install LimeSoDa[dev]
 
 Installing from source
 ----------------------
 
-To install pyLimeSoDa from source:
+To install LimeSoDa from source:
 
 1. Clone the repository:
 
    .. code-block:: bash
 
-      git clone https://github.com/a11to1n3/pyLimeSoDa.git
-      cd pyLimeSoDa
+      git clone https://github.com/a11to1n3/LimeSoDa.git
+      cd LimeSoDa
 
 2. Install the package:
 
@@ -62,11 +62,11 @@ To install pyLimeSoDa from source:
 Verifying Installation
 ----------------------
 
-To verify that pyLimeSoDa is installed correctly, you can run:
+To verify that LimeSoDa is installed correctly, you can run:
 
 .. code-block:: python
 
-   import pyLimeSoDa
-   print(pyLimeSoDa.__version__)
+   import LimeSoDa
+   print(LimeSoDa.__version__)
 
 This should print the version number of the installed package.

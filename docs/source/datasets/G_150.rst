@@ -1,0 +1,117 @@
+G.150 Dataset
+============
+
+Description
+-----------
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: DEM, ERa, RSS, VI
+* Sample size: 150
+* Number of Features: 17
+* Coordinates: With coordinates (EPSG: 32722)
+* Location: Goias, Brazil
+* Sampling Design: Regular Grid Sampling
+* Study Area Size: 79 ha
+* Geological Setting: unknown
+* Previous Data Publication: None
+* Contact Information:
+    * Domingos Sarvio Magalhaes Valente (valente@ufv.br), Federal University of Vicosa
+    * Marcelo Marques Costa (marcelo_marques_costa@ufj.edu.br), Federal University of Jatai
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Changelog:
+    * Version 1.0 (XXX.2025): Initial release
+
+Details
+-------
+
+The dataset contains the following target soil properties and features:
+
+Target Soil Properties:
+
+SOC - Soil Organic Carbon
+    * Code: ``SOC_target``
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
+    * Sampling Date: October 2010
+    * Sampling Depth: 0 – 20 cm
+
+pH
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode with a 2.5:1 liquid:soil volumetric ratio
+    * Sampling Date: October 2010
+    * Sampling Depth: 0 – 20 cm
+
+Clay
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water (Gee and Bauder 1986)
+    * Sampling Date: October 2010
+    * Sampling Depth: 0 – 20 cm
+
+Groups of Features:
+
+DEM – Digital Elevation Model and Terrain Parameters
+    * Number Features: 2
+    * Code(s): ``Altitude``, ``Slope``
+    * Unit: ``Altitude`` in m, ``Slope`` in °
+    * Sensing: Digital elevation model raster (30 m) based on synthetic aperture radar from "Copernicus Open Access Hub"
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster package, extracting DEM values from raster at soil sampling locations
+    * Sampling Date: December 2010
+
+ERa – Apparent Electrical Resistivity
+    * Number Features: 1
+    * Code(s): ``ERa``
+    * Unit: Ω m
+    * Sensing: LandMapper ERM-02 conductivity meter (Landviser, League City, USA) with exploration depth of 0 - 20 cm, in-situ
+    * Processing: Ordinary Kriging to align sensing- with soil sampling locations
+    * Sampling Date: December 2010
+
+RSS – Remote Sensing Derived Spectral Data
+    * Number Features: 12
+    * Code(s): ``B01``, ``B02``, ``B03``, ``B04``, ``B05``, ``B06``, ``B07``, ``B08``, ``B8A``, ``B09``, ``B11``, ``B12``
+    * Unit: Unitless
+    * Sensing: Sentinel-2 bare soil Image (Level-2A) from "Copernicus Open Access Hub"
+    * Processing: Extracting RSS values from raster at soil sampling locations
+    * Sampling Date: July 2017
+
+VI - Vegetation Indices
+    * Number Features: 2
+    * Code(s): ``NDVI``, ``GNDVI``
+    * Unit: Unitless
+    * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
+    * Processing: Calculating ``NDVI`` as (B08 - B04) / (B08 + B04) and ``GNDVI`` as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
+    * Sampling Date: January 2019
+
+Examples
+--------
+
+.. code-block:: python
+
+    # Load and explore the dataset
+    data = load_dataset("G.150")
+    dataset = data["Dataset"]
+    folds = data["Folds"]
+    coords = data["Coordinates"]
+
+    # Split into train/test using fold 1
+    X_train, X_test, y_train, y_test = split_dataset(
+        data=data,
+        fold=1,
+        targets=["pH_target", "SOC_target", "clay_target"]
+    )
+
+    # Calculate model performance
+    predictions = model.predict(X_test)
+    metrics = calculate_performance(y_test, predictions)
+    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+    # Visualize soil properties
+    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
+    soil_map.save("G150_pH_map.html")
+
+References
+---------
+* Gee, G.W. & Bauder, J.W. (1986) Particle-Size Analysis. In: Klute, A., Ed., Methods of Soil Analysis, Part 1. Physical and Mineralogical Methods, Agronomy Monograph No. 9, 2nd Edition, American Society of Agronomy/Soil Science Society of America, Madison, WI, 383-411.
+
+* Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.

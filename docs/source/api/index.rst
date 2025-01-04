@@ -1,7 +1,7 @@
 API Reference
 =============
 
-This section provides detailed information about the pyLimeSoDa API.
+This section provides detailed information about the LimeSoDa API.
 
 .. toctree::
    :maxdepth: 2
@@ -13,6 +13,6 @@ This section provides detailed information about the pyLimeSoDa API.
 Module Overview
 ---------------
 
-- :mod:`pyLimeSoDa`: Main package module
-- :mod:`pyLimeSoDa.loaders`: Dataset loading functions
-- :mod:`pyLimeSoDa.utils`: Utility functions for data processing and evaluation
+- :mod:`LimeSoDa`: Main package module
+- :mod:`LimeSoDa.loaders`: Dataset loading functions
+- :mod:`LimeSoDa.utils`: Utility functions for data processing and evaluation

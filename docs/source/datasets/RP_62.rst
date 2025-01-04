@@ -27,71 +27,71 @@ Details
 Target Soil Properties:
 
 SOC - Soil Organic Carbon
-* Code: SOC_target
-* Unit: %
-* Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
-* Sampling Date: October 2017
-* Sampling Depth: 0 - 30 cm
+    * Code: SOC_target
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
+    * Sampling Date: October 2017
+    * Sampling Depth: 0 - 30 cm
 
 pH
-* Code: pH_target
-* Unit: Unitless
-* Protocol: Measured in a water suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (DIN ISO 10390)
-* Sampling Date: May 2020
-* Sampling Depth: 0 - 30 cm
+    * Code: pH_target
+    * Unit: Unitless
+    * Protocol: Measured in a water suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (DIN ISO 10390)
+    * Sampling Date: May 2020
+    * Sampling Depth: 0 - 30 cm
 
 Clay
-* Code: Clay_target
-* Unit: %
-* Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, German adaption (DIN ISO 11277)
-* Sampling Date: October 2017
-* Sampling Depth: 0 - 30 cm
+    * Code: Clay_target
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, German adaption (DIN ISO 11277)
+    * Sampling Date: October 2017
+    * Sampling Depth: 0 - 30 cm
 
 Groups of Features:
 
 ERa – Apparent Electrical Resistivity
-* Number Features: 1
-* Code(s): ERa
-* Unit: Ω m
-* Sensing: Array of multiple rolling electrodes (Geophilus company, Caputh, Germany) on RapidMapper platform with exploration depth of 0 - 50 cm, in-situ
-* Processing: Ordinary Kriging to align sensing- with soil sampling locations
-* Sampling Date: September 2020
+    * Number Features: 1
+    * Code(s): ERa
+    * Unit: Ω m
+    * Sensing: Array of multiple rolling electrodes (Geophilus company, Caputh, Germany) on RapidMapper platform with exploration depth of 0 - 50 cm, in-situ
+    * Processing: Ordinary Kriging to align sensing- with soil sampling locations
+    * Sampling Date: September 2020
 
 Gamma
-* Number Features: 5
-* Code(s): G_Total_Counts, G_K, G_U, G_Th, G_Cs
-* Unit: Unitless
-* Sensing: Passive gamma sensor (MS-2000-CsI-MTS, Medusa Radiometrics BV, Groningen, Netherlands) on RapidMapper platform, in-situ
-* Processing: Ordinary Kriging to align sensing- with soil sampling locations
-* Sampling Date: September 2020
+    * Number Features: 5
+    * Code(s): G_Total_Counts, G_K, G_U, G_Th, G_Cs
+    * Unit: Unitless
+    * Sensing: Passive gamma sensor (MS-2000-CsI-MTS, Medusa Radiometrics BV, Groningen, Netherlands) on RapidMapper platform, in-situ
+    * Processing: Ordinary Kriging to align sensing- with soil sampling locations
+    * Sampling Date: September 2020
 
 NIR – Near Infrared Spectroscopy
-* Number Features: 1,401
-* Code(s): wl_1000, wl_1001, wl_1002 ... wl_2400
-* Unit: % (Reflectance)
-* Sensing: NIR spectrometer (C11118GA, Hamamatsu Photonics K.K., Shizuoka Prefecture, Japan) on RapidMapper platform, in-situ, spectral range was 900 - 2550 nm at 15 nm intervals
-* Processing: Kriging to align sensing- with soil sampling locations, discarding noisy edges of the spectrum (900 - 1,000 nm & 2,400 - 2,550 nm), resampling to 1 nm intervals
-* Sampling Date: September 2020
-* Spectral Information (after data processing):
-    * Data Representation: Wavelength (in nm)
-    * Spectral Resolution: 1 nm
-    * Spectral Range: 1,000 - 2,400 nm
+    * Number Features: 1,401
+    * Code(s): wl_1000, wl_1001, wl_1002 ... wl_2400
+    * Unit: % (Reflectance)
+    * Sensing: NIR spectrometer (C11118GA, Hamamatsu Photonics K.K., Shizuoka Prefecture, Japan) on RapidMapper platform, in-situ, spectral range was 900 - 2550 nm at 15 nm intervals
+    * Processing: Kriging to align sensing- with soil sampling locations, discarding noisy edges of the spectrum (900 - 1,000 nm & 2,400 - 2,550 nm), resampling to 1 nm intervals
+    * Sampling Date: September 2020
+    * Spectral Information (after data processing):
+        * Data Representation: Wavelength (in nm)
+        * Spectral Resolution: 1 nm
+        * Spectral Range: 1,000 - 2,400 nm
 
 pH-ISE – Ion Selective Electrodes for pH Determination
-* Number Features: 1
-* Code(s): pH-ISE
-* Unit: Unitless
-* Sensing: Soil pH Manager (VERIS Technologies, Salinas, USA) on RapidMapper platform, in-situ
-* Processing: Ordinary Kriging to align sensing- with soil sampling locations
-* Sampling Date: September 2020
+    * Number Features: 1
+    * Code(s): pH-ISE
+    * Unit: Unitless
+    * Sensing: Soil pH Manager (VERIS Technologies, Salinas, USA) on RapidMapper platform, in-situ
+    * Processing: Ordinary Kriging to align sensing- with soil sampling locations
+    * Sampling Date: September 2020
 
 VI - Vegetation Indices
-* Number Features: 2
-* Code(s): NDVI, GNDVI
-* Unit: Unitless
-* Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
-* Processing: Calculating NDVI as (B08 - B04) / (B08 + B04) and GNDVI as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
-* Sampling Date: March 2017
+    * Number Features: 2
+    * Code(s): NDVI, GNDVI
+    * Unit: Unitless
+    * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
+    * Processing: Calculating NDVI as (B08 - B04) / (B08 + B04) and GNDVI as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
+    * Sampling Date: March 2017
 
 Examples
 --------

@@ -29,39 +29,39 @@ The dataset contains the following target soil properties and features:
 Target Soil Properties:
 
 SOC - Soil Organic Carbon
-* Code: SOC_target
-* Unit: %
-* Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO2 release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
-* Sampling Date: April 2013
-* Sampling Depth: 0 - 30 cm
+    * Code: ``SOC_target``
+    * Unit: %
+    * Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO2 release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
+    * Sampling Date: April 2013
+    * Sampling Depth: 0 - 30 cm
 
 pH
-* Code: pH_target
-* Unit: Unitless
-* Protocol: Measured in CaCl2 suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (DIN ISO 10390)
-* Sampling Date: April 2013
-* Sampling Depth: 0 - 30 cm
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in CaCl₂ suspension with a glass electrode with a 5:1 liquid:soil volumetric ratio (DIN ISO 10390)
+    * Sampling Date: April 2013
+    * Sampling Depth: 0 - 30 cm
 
 Clay
-* Code: Clay_target
-* Unit: %
-* Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, German adaption (DIN ISO 11277)
-* Sampling Date: April 2013
-* Sampling Depth: 0 - 30 cm
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Sieve-Pipette method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by sedimentation in water, German adaption (DIN ISO 11277)
+    * Sampling Date: April 2013
+    * Sampling Depth: 0 - 30 cm
 
 Groups of Features:
 
 MIR – Mid Infrared Spectroscopy
-* Number Features: 1,686
-* Code(s): wn_3799, wn_3797.1, wn_3795.1 ... wn_549.6
-* Unit: % (Reflectance)
-* Sensing: MIR spectrometer (Bruker Tensor 27 HTS-XT, Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 – 550 cm^-1 at 4 cm^-1 intervals
-* Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 3,799 cm^-1), resampling to ~2 cm^-1 intervals
-* Sampling Date: April 2013
-* Spectral Information (after data processing):
-    * Data Representation: Wavenumber (in cm^-1)
-    * Spectral Resolution: ~ 2 cm^-1
-    * Spectral Range: 3,799 - 549.6 cm^-1
+    * Number Features: 1,686
+    * Code(s): ``wn_3799, wn_3797.1, wn_3795.1 ... wn_549.6``
+    * Unit: % (Reflectance)
+    * Sensing: MIR spectrometer (Bruker Tensor 27 HTS-XT, Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 – 550 cm^-1 at 4 cm^-1 intervals
+    * Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 3,799 cm^-1), resampling to ~2 cm^-1 intervals
+    * Sampling Date: April 2013
+    * Spectral Information (after data processing):
+        * Data Representation: Wavenumber (in cm^-1)
+        * Spectral Resolution: ~ 2 cm^-1
+        * Spectral Range: 3,799 - 549.6 cm^-1
 
 Examples
 --------

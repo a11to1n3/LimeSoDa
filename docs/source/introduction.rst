@@ -9,7 +9,7 @@ LimeSoDa aims to enable more reliable benchmarking and comparison of various mod
 Dataset Structure
 -----------------
 
-Each dataset in pyLimeSoDa is structured as follows:
+Each dataset in LimeSoDa is structured as follows:
 
 -  **Dataset**: A pandas DataFrame containing:
 

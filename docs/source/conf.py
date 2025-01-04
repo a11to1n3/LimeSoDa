@@ -11,7 +11,7 @@ import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
 
-project = 'pyLimeSoDa'
+project = 'LimeSoDa'
 copyright = '2025, JonasSchmidinger'
 author = 'JonasSchmidinger'
 
