@@ -3,7 +3,7 @@ Metadata
 
 For the metadata of each dataset, refer to their individual documentation pages:
 
-__ toctree::
+.. toctree::
    :maxdepth: 1
 
    B_204	
