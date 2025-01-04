@@ -163,7 +163,7 @@ Datasets comprise:
 - **Coordinates**: Provided where available
 
 ## Features
-Features in the dataset 
+The following groups of features are present in datasets of Lime.SoDa:
 
 - **CSMoisture**: Capacitive soil moisture 
 - **DEM**: Digital elevation model and terrain parameters 
