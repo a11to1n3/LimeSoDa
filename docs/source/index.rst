@@ -19,7 +19,7 @@ pyLimeSoDa (Precision Liming Soil Datasets) is a Python package providing a coll
 Features
 --------
 
-* 30 soil datasets from various geographic regions
+* 31 soil datasets from various geographic regions
 * Consistent structure across datasets for easy comparison
 * Pre-defined folds for cross-validation
 * Spatial coordinates (where available)
