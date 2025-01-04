@@ -18,7 +18,7 @@ Each dataset in pyLimeSoDa is structured as follows:
 
 -  **Folds**: A numpy array with pre-defined folds for cross-validation
 
--  **Coordinates**: A pandas DataFrame with spatial coordinates (if available)
+-  **Coordinates**: A pandas DataFrame with spatial coordinates (if available, else empty)
 
 Target Soil Properties
 ----------------------
