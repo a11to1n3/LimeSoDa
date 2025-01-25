@@ -1,5 +1,5 @@
 SP.231 Dataset
-==============
+=============
 
 Description
 -----------
@@ -9,23 +9,26 @@ Description
 * Number of Features: 271
 * Coordinates: With coordinates (EPSG: 32654)
 * Location: Saitama Prefecture, Japan
-* Sampling Design: Two sampling designs over multiple fields depending on the soil conditions: (1) Systematic Sampling, in which samples are taken in the corners and middle of the field and (2) Fully Random Sampling
+* Sampling Design: Two sampling designs over multiple fields depending on the soil conditions: (1) systematic sampling, in which samples are taken in the corners and middle of the field and (2) simple random sampling
 * Study Area Size: 3.1 ha
-* Geological Setting: Silandic Andosols
+* Geological Setting: Volcanic ash (Andosols)
 * Previous Data Publication: None
 * Contact Information:
     * Masakazu Kodaira (kodaira@cc.tuat.ac.jp), Tokyo University of Agriculture and Technology
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
-    * Version 0.1.0 (XXX.2025): Initial release
+    * Version 1.0 (XXX.03.2025): Initial release
 
 Details
 -------
 
+Dataset
+^^^^^^^
 The dataset contains the following target soil properties and features:
 
 Target Soil Properties:
+""""""""""""""""""""""
 
 SOM - Soil Organic Matter
     * Code: ``SOM_target``
@@ -49,15 +52,16 @@ Clay
     * Sampling Depth: 0 - 15 cm
 
 Groups of Features:
+"""""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
     * Number Features: 271
-    * Code(s): ``wl_350, wl_355, wl_360`` ... ``wl_1700``
+    * Code(s): ``wl_350``, ``wl_355``, ``wl_360`` ... ``wl_1700``
     * Unit: % (Reflectance)
-    * Sensing: mounted vis-NIR spectrometer (SAS3000, Shibuya Seiki Co. Ltd., Ehime Prefecture, Japan), in-situ, spectral range was 320 – 1,700 nm at 1 - 7 nm intervals [?metadata per email said 0.33 to 1.56 nm but in the paper it says 1 to 7 nm, which is correct?]
+    * Sensing: Mounted vis-NIR spectrometer (SAS3000, Shibuya Seiki Co. Ltd., Ehime Prefecture, Japan), in-situ, spectral range was 320 – 1,700 nm at 1 - 7 nm intervals
     * Processing: Discarding noisy edges of the spectrum (320 - 350 nm), resampling to 5 nm intervals
     * Sampling Date: February 2017, December 2017 and February 2018
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavelength (in nm)
         * Spectral Resolution: 1 nm
         * Spectral Range: 350 - 1,700 nm
@@ -66,6 +70,11 @@ Examples
 --------
 
 .. code-block:: python
+
+    from LimeSoDa import load_dataset, split_dataset
+    from sklearn.linear_model import LinearRegression
+    from sklearn.metrics import r2_score, mean_squared_error
+    import numpy as np
 
     # Load and explore the dataset
     data = load_dataset("SP.231")
@@ -77,19 +86,21 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOM_target", "clay_target"]
+        targets=["pH_target", "SOM_target", "Clay_target"]
     )
 
-    # Calculate model performance
+    # Fit model and get predictions
+    model = LinearRegression()
+    model.fit(X_train, y_train)
     predictions = model.predict(X_test)
-    metrics = calculate_performance(y_test, predictions)
-    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
 
-    # Visualize soil properties
-    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
-    soil_map.save("SP231_pH_map.html")
+    # Calculate performance metrics
+    r2 = r2_score(y_test, predictions)
+    rmse = np.sqrt(mean_squared_error(y_test, predictions))
+    print(f"R-squared: {r2:.7f}")
+    print(f"RMSE: {rmse:.7f}")
 
 References
 ----------
 
-Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.
+Gee, G.W. & Bauder, J.W. (1986) Particle-Size Analysis. In: Klute, A., Ed., Methods of Soil Analysis, Part 1. Physical and Mineralogical Methods, Agronomy Monograph No. 9, 2nd Edition, American Society of Agronomy/Soil Science Society of America, Madison, WI, 383-411.

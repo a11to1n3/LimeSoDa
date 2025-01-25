@@ -9,16 +9,16 @@ Description
 * Number of Features: 15
 * Coordinates: Without coordinates because of privacy concerns
 * Location: Wisconsin, USA
-* Sampling Design: conditioned Latin Hypercube Sampling based on electrical conductivity, terrain parameters, and normalized difference vegetation index
+* Sampling Design: Conditioned latin hypercube sampling based on electrical conductivity, terrain parameters, and normalized difference vegetation index
 * Study Area Size: 80 ha
 * Geological Setting: Glacial outwash and sediments of the Johnson End Moraine
 * Previous Data Publication: None
 * Contact Information:
     * Jingyi Huang (jhuang426@wisc.edu), University of Wisconsin-Madison
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
-    * Version 0.1.0 (XXX.2025): Initial release
+    * Version 1.0 (XXX.03.2025): Initial release
 
 Details
 -------
@@ -78,7 +78,7 @@ VI - Vegetation Indices
     * Processing: Calculating ``NDVI`` as (B08 - B04) / (B08 + B04) and ``GNDVI`` as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
     * Sampling Date: July 2019
 
-XRF – X-ray fluorescence derived elemental concentrations
+XRF – X-ray Fluorescence Derived Elemental Concentrations
     * Number Features: 10
     * Code(s): ``XRF_Mg``, ``XRF_Al``, ``XRF_Si``, ``XRF_Ca``, ``XRF_Ti``, ``XRF_Mn``, ``XRF_Fe``, ``XRF_Zn``, ``XRF_Sr``, ``XRF_Zr``
     * Unit: ppm (estimated through XRF Geochem not ground truth)
@@ -91,6 +91,11 @@ Examples
 
 .. code-block:: python
 
+    from LimeSoDa import load_dataset, split_dataset
+    from sklearn.linear_model import LinearRegression
+    from sklearn.metrics import r2_score, mean_squared_error
+    import numpy as np
+
     # Load and explore the dataset
     data = load_dataset("W.50")
     dataset = data["Dataset"]
@@ -101,13 +106,19 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOC_target", "clay_target"]
+        targets=["pH_target", "SOC_target", "Clay_target"]
     )
 
-    # Calculate model performance
+    # Fit model and get predictions
+    model = LinearRegression()
+    model.fit(X_train, y_train)
     predictions = model.predict(X_test)
-    metrics = calculate_performance(y_test, predictions)
-    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
+
+    # Calculate performance metrics
+    r2 = r2_score(y_test, predictions)
+    rmse = np.sqrt(mean_squared_error(y_test, predictions))
+    print(f"R-squared: {r2:.7f}")
+    print(f"RMSE: {rmse:.7f}")
 
 References
 ----------

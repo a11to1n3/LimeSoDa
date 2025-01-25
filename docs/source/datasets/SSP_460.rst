@@ -3,7 +3,68 @@ SSP.460 Dataset
 
 Description
 -----------
-* Metadata not yet received
+* Target Soil Properties: SOC, pH, Clay
+* Groups of Features: vis-NIR
+* Sample Size: 460
+* Number of Features: 830
+* Coordinates: Without coordinates because of privacy concerns
+* Location: State of Sao Paulo, Brazil
+* Sampling Design: Regular grid sampling
+* Study Area Size: 473 ha
+* Geological Setting: Predominantly sandstones with some basaltic flows
+* Previous Data Publication: None
+* Contact Information:
+    * Leonardo Ramirez Lopez (Ramirez-Lopez.L@buchi.com), BÜCHI Labortechnik AG
+* License: CC BY-SA 4.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
+* Changelog:
+    * Version 1.0 (XXX.03.2025): Initial release
+
+Details
+-------
+
+Dataset
+^^^^^^^
+The dataset contains the following target soil properties and features:
+
+Target Soil Properties:
+""""""""""""""""""""""
+
+SOC - Soil Organic Carbon
+    * Code: ``SOC_target``
+    * Unit: %
+    * Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
+    * Sampling Date: Unknown month 2000
+    * Sampling Depth: 0 - 20 cm
+
+pH
+    * Code: ``pH_target``
+    * Unit: Unitless
+    * Protocol: Measured in water suspension with a glass electrode with unspecified liquid:soil ratio
+    * Sampling Date: Unknown month 2001
+    * Sampling Depth: 0 - 20 cm
+
+Clay
+    * Code: ``Clay_target``
+    * Unit: %
+    * Protocol: Hydrometer method; separation of the fractions by sieving and sedimentation. Measurement of the separated fractions by weighing the density of the suspension (Gee and Bauder 1979)
+    * Sampling Date: Unknown month 2001
+    * Sampling Depth: 0 - 20 cm
+
+Groups of Features:
+"""""""""""""""""
+
+vis-NIR – Visible and Near Infrared Spectroscopy
+    * Number Features: 830
+    * Code(s): ``wl_350``, ``wl_352``, ``wl_354`` ... ``wl_2498``
+    * Unit: % (Reflectance)
+    * Sensing: Infra-red intelligent spectroradiometer-IRIS MkIV (Geophysical and Environmental Research Corporation, New York, USA), on dried samples in the laboratory, spectral range was 350 – 3,000 nm at 2 - 5 nm intervals
+    * Processing: Discarding noisy edges of the spectrum (2,458 - 3,000 nm)
+    * Sampling Date: Unknown month 2001
+    * Spectral Information (After Data Processing):
+        * Data Representation: Wavelength (in nm)
+        * Spectral Resolution: 2 - 5 nm depending on wavelength range
+        * Spectral Range: 350 – 2,498 nm
 
 Examples
 --------
@@ -20,7 +81,7 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOC_target", "clay_target"]
+        targets=["pH_target", "SOC_target", "Clay_target"]
     )
 
     # Calculate model performance
@@ -31,8 +92,6 @@ Examples
 References
 ----------
 
-Bouyoucos, G. J. (1927). The hydrometer as a new method for the mechanical analysis of soils. Soil science, 23(5), 343-354.
+Gee, G. W., & Bauder, J. W. (1979). Particle size analysis by hydrometer: a simplified method for routine textural analysis and a sensitivity test of measurement parameters. Soil Science Society of America Journal, 43(5), 1004-1007.
 
 Walkley, A. & Black, I. A. (1934). An examination of the Degtjareff method for determining soil organic matter, and a proposed modification of the chromic acid titration method. Soil science, 37(1), 29-38.
-
-Tavares, T. R., Molin, J. P., Nunes, L. C., Alves, E. E. N., Krug, F. J., & de Carvalho, H. W. P. (2022). Spectral data of tropical soils using dry-chemistry techniques (VNIR, XRF, and LIBS): A dataset for soil fertility prediction. Data in Brief, 41, 108004.

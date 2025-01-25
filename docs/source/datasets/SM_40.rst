@@ -9,16 +9,16 @@ Description
 * Number of Features: 3
 * Coordinates: With coordinates (EPSG: 32633)
 * Location: South Moravia, Czechia
-* Sampling Design: Stratified Sampling from previous Regular Grid Sampling, stratification was handpicked to cover contrasting areas
+* Sampling Design: Stratified sampling from previous regular grid sampling, stratification was handpicked to cover contrasting areas
 * Study Area Size: 53 ha
-* Geological Setting: Weichselian sandy loess [? Eventually wrong ?]
+* Geological Setting: Weichselian sandy loess
 * Previous Data Publication: None
 * Contact Information:
     * Vojtech Lukas (vojtech.lukas@mendelu.cz), Mendel University in Brno
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
-    * Version 0.1.0 (XXX.2025): Initial release
+    * Version 1.0 (XXX.03.2025): Initial release
 
 Details
 -------
@@ -39,14 +39,14 @@ SOC - Soil Organic Carbon
 pH
     * Code: ``pH_target``
     * Unit: Unitless
-    * Protocol: Measured in KCl suspension with a glass electrode with unspecified [?please add if you the volumetric or gravimetric soil to liquid ratio?] liquid:soil ratio (Zbíral 2002)
+    * Protocol: Measured in KCl suspension with a glass electrode with unspecified liquid:soil ratio (Zbíral 2002)
     * Sampling Date: May 2004
     * Sampling Depth: 0 - 30 cm
 
 Clay
     * Code: ``Clay_target``
     * Unit: %
-    * Protocol: Hydrometer method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by measuring suspension density using a hydrometer following slight adjustments of the Bouyoucos (1927) method [? Citation ?]
+    * Protocol: Hydrometer method, measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by measuring suspension density using a hydrometer following slight adjustments of the Bouyoucos (1927) method
     * Sampling Date: April 2006
     * Sampling Depth: 0 - 30 cm
 
@@ -83,7 +83,7 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOC_target", "clay_target"]
+        targets=["pH_target", "SOC_target", "Clay_target"]
     )
 
     # Calculate model performance

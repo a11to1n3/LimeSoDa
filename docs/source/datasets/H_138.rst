@@ -9,54 +9,58 @@ Description
 * Number of Features: 2,489
 * Coordinates: With coordinates (EPSG: 32649)
 * Location: Hubei, China
-* Sampling Design: Two sampling designs: (1) adapted Latin Hypercube Sampling taking into account legacy samples, correlation and accessibility based on terrain parameters and (2) Uncertainty Guided Sampling based on uncertainty predictions from a Random Forest model (Stumpf et al. 2017)
+* Sampling Design: Two sampling designs: (1) adapted Latin Hypercube Sampling taking into account legacy samples, correlation and accessibility and (2) Uncertainty Guided Sampling based on uncertainty predictions from a Random Forest model (Stumpf et al. 2017)
 * Study Area Size: 420 ha
 * Geological Setting: Sedimentary rocks, mainly dolomite with silt and limestone formed in the middle and lower Jurassic
-* Previous Data Publication: Full dataset published in Wadoux et al. (2025) [?Not yet published but planned?]
+* Previous Data Publication: Full dataset published in Wadoux et al. (2024)
 * Contact Information:
     * Alexandre M.J.-C- Wadoux (Alexandre.Wadoux@inrae.fr), University of Montpellier
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
-    * Version 0.1.0 (XXX.2025): Initial release
+    * Version 1.0 (XXX.03.2025): Initial release
 
 Details
 -------
 
+Dataset
+^^^^^^^
 The dataset contains the following target soil properties and features:
 
 Target Soil Properties:
+""""""""""""""""""""""
 
 SOC - Soil Organic Carbon
     * Code: ``SOC_target``
     * Unit: %
     * Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO2 release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
-    * Sampling Date: June 2013, May, 2014 & November 2014
+    * Sampling Date: June 2013, May, 2014 and November 2014
     * Sampling Depth: 0 - 20 cm
 
 pH
     * Code: ``pH_target``
     * Unit: Unitless
-    * Protocol: Measured in water suspension with a glass electrode with unspecified [?please add if you the volumetric or gravimetric soil to liquid ratio?] liquid:soil ratio
-    * Sampling Date: June 2013, May, 2014 & November 2014
+    * Protocol: Measured in water suspension with a glass electrode with unspecified liquid:soil ratio
+    * Sampling Date: June 2013, May, 2014 and November 2014
     * Sampling Depth: 0 - 20 cm
 
 Clay
     * Code: ``Clay_target``
     * Unit: %
     * Protocol: Measured through fractioning the soil into the sand fractions by sieving, and the silt and clay fractions by x-ray sedimentation
-    * Sampling Date: June 2013, May, 2014 & November 2014
+    * Sampling Date: June 2013, May, 2014 and November 2014
     * Sampling Depth: 0 - 20 cm
 
 Groups of Features:
+"""""""""""""""""
 
 MIR – Mid Infrared Spectroscopy
     * Number Features: 2,489
-    * Code(s): ``wn_5397.9, wn_5396, wn_5394`` ... ``wn_599.8``
+    * Code(s): ``wn_5397.9``, ``wn_5396``, ``wn_5394`` ... ``wn_599.8``
     * Unit: % (Reflectance)
-    * Sensing: VERTEX 70v FT-IR Spektrometer (Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 - 370 cm^-1 at 0.4 cm^-1 intervals
+    * Sensing: VERTEX 70v FT-IR Spectrometer (Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 - 370 cm^-1 at 0.4 cm^-1 intervals
     * Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 5,397.9 cm^-1) and noisy edges of the spectrum (599.8 - 370 cm^-1)
-    * Sampling Date: June 2013, May, 2014 & November 2014
+    * Sampling Date: June 2013, May, 2014 and November 2014
     * Spectral Information (after data processing):
         * Data Representation: Wavenumber (in cm^-1)
         * Spectral Resolution: ~2 cm^-1
@@ -66,6 +70,11 @@ Examples
 --------
 
 .. code-block:: python
+
+    from LimeSoDa import load_dataset, split_dataset
+    from sklearn.linear_model import LinearRegression
+    from sklearn.metrics import r2_score, mean_squared_error
+    import numpy as np
 
     # Load and explore the dataset
     data = load_dataset("H.138")
@@ -77,19 +86,23 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOC_target", "clay_target"]
+        targets=["pH_target", "SOC_target", "Clay_target"]
     )
 
-    # Calculate model performance
+    # Fit model and get predictions
+    model = LinearRegression()
+    model.fit(X_train, y_train)
     predictions = model.predict(X_test)
-    metrics = calculate_performance(y_test, predictions)
-    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
 
-    # Visualize soil properties
-    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
-    soil_map.save("H138_pH_map.html")
+    # Calculate performance metrics
+    r2 = r2_score(y_test, predictions)
+    rmse = np.sqrt(mean_squared_error(y_test, predictions))
+    print(f"R-squared: {r2:.7f}")
+    print(f"RMSE: {rmse:.7f}")
 
 References
 ----------
+
+Wadoux, A. M. J.-C., Stumpf, F., & Scholten, T.. (2024). A catchment-scale dataset of soil properties and their mid-infrared spectra. Zenodo repository. https://doi.org/10.5281/zenodo.14557348
 
 Stumpf, F., Schmidt, K., Goebes, P., Behrens, T., Schönbrodt-Stitt, S., Wadoux, A., Xiang, W. & Scholten, T. (2017). Uncertainty-guided sampling to improve digital soil maps. Catena, 153, 30-38.

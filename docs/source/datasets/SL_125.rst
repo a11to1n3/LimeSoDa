@@ -9,7 +9,7 @@ Description
 * Number of Features: 2,082
 * Coordinates: Without coordinates because of privacy concerns instead with dummy coordinates (EPSG: 4326)
 * Location: Skåne Län, Sweden
-* Sampling Design: Three sampling designs over multiple adjacent fields: (1) Regular Grid Sampling, targeted sampling through Surface Tortoise Sampling (Persson et al. 2023) based on (2) ERa and (3) Reflectance from remote sensing
+* Sampling Design: Three sampling designs over multiple adjacent fields: (1) regular grid sampling, targeted sampling through surface tortoise sampling (Persson et al. 2023) based on (2) ERa and (3) reflectance from remote sensing
 * Study Area Size: 78 ha
 * Geological Setting: High spatial variability of sandy till, clay till with chalk and glacial clay
 * Previous Data Publication: None
@@ -17,16 +17,19 @@ Description
     * Johanna Wetterlind (Johanna.Wetterlind@slu.se), Swedish University of Agricultural Sciences
     * Bo Stenberg (Bo.Stenberg@slu.se), Swedish University of Agricultural Sciences
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
-    * Version 0.1.0 (XXX.2025): Initial release
+    * Version 1.0 (XXX.03.2025): Initial release
 
 Details
 -------
 
+Dataset
+^^^^^^^
 The SL.125 dataset contains soil measurements and features organized in a dataframe with the following properties:
 
 Target Soil Properties:
+""""""""""""""""""""""
 
 SOM - Soil Organic Matter
     * Code: ``SOM_target``
@@ -50,6 +53,7 @@ Clay
     * Sampling Depth: 0 - 20 cm
 
 Groups of Features:
+"""""""""""""""""
 
 ERa – Apparent Electrical Resistivity
     * Number Features: 1
@@ -61,12 +65,12 @@ ERa – Apparent Electrical Resistivity
 
 vis-NIR – Visible and Near Infrared Spectroscopy
     * Number Features: 2,081
-    * Code(s): ``wl_420, wl_421, wl_422`` ... ``wl_2500``
+    * Code(s): ``wl_420``, ``wl_421``, ``wl_422`` ... ``wl_2500``
     * Unit: % (Reflectance)
     * Sensing: FieldSpec Pro FR scanning instrument (Analytical Spectral Devices Inc., Boulder, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 350 – 2,500 nm at 1.4 – 2.0 nm intervals
     * Processing: Discarding noisy edges of the spectrum (350 - 420 nm), resampling to 1 nm intervals
     * Sampling Date: September 2006
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavelength (in nm)
         * Spectral Resolution: 1 nm
         * Spectral Range: 420 - 2,500 nm
@@ -75,6 +79,11 @@ Examples
 --------
 
 .. code-block:: python
+
+    from LimeSoDa import load_dataset, split_dataset
+    from sklearn.linear_model import LinearRegression
+    from sklearn.metrics import r2_score, mean_squared_error
+    import numpy as np
 
     # Load and explore the dataset
     data = load_dataset("SL.125")
@@ -86,17 +95,19 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOM_target", "clay_target"]
+        targets=["pH_target", "SOM_target", "Clay_target"]
     )
 
-    # Calculate model performance
+    # Fit model and get predictions
+    model = LinearRegression()
+    model.fit(X_train, y_train)
     predictions = model.predict(X_test)
-    metrics = calculate_performance(y_test, predictions)
-    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
 
-    # Visualize soil properties (using dummy coordinates)
-    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
-    soil_map.save("SL125_pH_map.html")
+    # Calculate performance metrics
+    r2 = r2_score(y_test, predictions)
+    rmse = np.sqrt(mean_squared_error(y_test, predictions))
+    print(f"R-squared: {r2:.7f}")
+    print(f"RMSE: {rmse:.7f}")
 
 References
 ----------

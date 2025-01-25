@@ -9,17 +9,17 @@ Description
 * Number of Features: 2,146
 * Coordinates: With coordinates (EPSG: 32722)
 * Location: Santa Catarina, Brazil
-* Sampling Design: conditioned Latin Hypercube Sampling based on terrain parameters
+* Sampling Design: Conditioned latin hypercube sampling based on terrain parameters
 * Study Area Size: 108 ha
-* Geological Setting: Heavily weathered soils originating from volcanic rock of the Serra Geral Formation (basalt, dacit)
+* Geological Setting: Heavily weathered soils originating from volcanic rock of the Serra Geral Formation (basalt and dacite)
 * Previous Data Publication: None
 * Contact Information:
     * Taciara Zborowski Horst (taciaraz@utfpr.edu.br), Federal University of Technology – Paraná
     * Ricardo Simão Diniz Dalmolin (dalmolin@ufsm.br), Federal University of Santa Maria
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.2025, version 1.0
+* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
-    * Version 0.1.0 (XXX.2025): Initial release
+    * Version 1.0 (XXX.03.2025): Initial release
 
 Details
 -------
@@ -29,6 +29,7 @@ Dataset
 The SC.93 dataset contains soil measurements and features organized in a dataframe with the following properties:
 
 Target Soil Properties:
+""""""""""""""""""""""
 
 SOC - Soil Organic Carbon
     * Code: ``SOC_target``
@@ -52,15 +53,16 @@ Clay
     * Sampling Depth: 0 - 20 cm
 
 Groups of Features:
+"""""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
     * Number Features: 2,146
-    * Code(s): ``wl_355, wl_356, wl_357`` ... ``wl_2500``
+    * Code(s): ``wl_355``, ``wl_356``, ``wl_357`` ... ``wl_2500``
     * Unit: % (Reflectance)
-    * Sensing: ASD FieldSpec 4 (Analytical Spectral Devices Inc., Boulder, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 355 - 2,500 nm at 3 - 8 nm spectral resolution
+    * Sensing: ASD FieldSpec 4 (Analytical Spectral Devices Inc., Boulder, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 355 - 2,500 nm at 3 - 8 nm intervals
     * Processing: Resampling to 1 nm intervals
     * Sampling Date: March 2017
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavelength (in nm)
         * Spectral Resolution: 1 nm
         * Spectral Range: 355 – 2500 nm
@@ -69,6 +71,11 @@ Examples
 --------
 
 .. code-block:: python
+
+    from LimeSoDa import load_dataset, split_dataset
+    from sklearn.linear_model import LinearRegression
+    from sklearn.metrics import r2_score, mean_squared_error
+    import numpy as np
 
     # Load and explore the dataset
     data = load_dataset("SC.93")
@@ -80,17 +87,19 @@ Examples
     X_train, X_test, y_train, y_test = split_dataset(
         data=data,
         fold=1,
-        targets=["pH_target", "SOC_target", "clay_target"]
+        targets=["pH_target", "SOC_target", "Clay_target"]
     )
 
-    # Calculate model performance
+    # Fit model and get predictions
+    model = LinearRegression()
+    model.fit(X_train, y_train)
     predictions = model.predict(X_test)
-    metrics = calculate_performance(y_test, predictions)
-    print(f"R2: {metrics['r2']:.3f}, RMSE: {metrics['rmse']:.3f}")
 
-    # Visualize soil properties
-    soil_map = plot_soil_map(data, "pH_target", zoom_start=14)
-    soil_map.save("SC93_pH_map.html")
+    # Calculate performance metrics
+    r2 = r2_score(y_test, predictions)
+    rmse = np.sqrt(mean_squared_error(y_test, predictions))
+    print(f"R-squared: {r2:.7f}")
+    print(f"RMSE: {rmse:.7f}")
 
 References
 ----------
