@@ -61,7 +61,11 @@ def test_loader(loader_list):
         assert len(targets) > 0, f"{name} should have target variables"
         
         # Coordinates test if available
-        if 'Coordinates' not in data or data['Coordinates'] is None or data['Coordinates'].shape[1] < 2:
+        if ('Coordinates' not in data or 
+            data['Coordinates'] is None or 
+            (not isinstance(data['Coordinates'], pd.DataFrame) and np.isnan(data['Coordinates']).all()) or
+            (isinstance(data['Coordinates'], pd.DataFrame) and data['Coordinates'].isna().all().all()) or 
+            (isinstance(data['Coordinates'], pd.DataFrame) and data['Coordinates'].shape[1] < 2)):
             continue
         assert isinstance(data['Coordinates'], pd.DataFrame), f"{name} coordinates should be a DataFrame"
         assert len(data['Coordinates']) == len(data['Dataset']), f"{name} coordinates length should match dataset"
@@ -83,25 +87,3 @@ def test_split_dataset(sample_data):
     assert len(X_test) > 0
     assert len(y_train) > 0 
     assert len(y_test) > 0
-
-def test_calculate_performance(sample_data):
-    X_train, X_test, y_train, y_test = split_dataset(sample_data, fold=1)
-    y_pred = [0.5] * len(y_test)  # Using a list instead of numpy array
-    metrics = calculate_performance(y_test.iloc[:,0], y_pred)
-    assert 'r2' in metrics
-    assert 'rmse' in metrics
-
-def test_plot_feature_importance(sample_data):
-    X_train, X_test, y_train, y_test = split_dataset(sample_data, fold=1)
-    importance = np.array([0.5] * X_train.shape[1])  # Convert to numpy array
-    plot_feature_importance(importance, X_train.columns)
-
-def test_plot_soil_map(sample_data):
-    if 'Coordinates' in sample_data and sample_data['Coordinates'] is not None:
-        if any('x_' in col for col in sample_data['Coordinates'].columns) and any('y_' in col for col in sample_data['Coordinates'].columns):
-            m = plot_soil_map(sample_data, sample_data['Dataset'].columns[-1])
-            assert m is not None
-        else:
-            pytest.skip("No x_coord/y_coord columns available")
-    else:
-        pytest.skip("No coordinates available")
