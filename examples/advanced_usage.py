@@ -1,11 +1,9 @@
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import RandomizedSearchCV
-from scipy.stats import randint
+from sklearn.metrics import r2_score, mean_squared_error
 from LimeSoDa import load_dataset
-from LimeSoDa.utils import split_dataset, calculate_performance, plot_soil_map, plot_feature_importance
+from LimeSoDa.utils import split_dataset
 
 def example_single_fold_single_target():
     """Example using single fold and single target"""
@@ -21,7 +19,10 @@ def example_single_fold_single_target():
     model = LinearRegression()
     model.fit(X_train, y_train.values.ravel())
     y_pred = model.predict(X_test)
-    performance = calculate_performance(y_test.values.ravel(), y_pred)
+    performance = {
+        'r2': r2_score(y_test.values.ravel(), y_pred),
+        'rmse': np.sqrt(mean_squared_error(y_test.values.ravel(), y_pred))
+    }
     
     return performance, model, (X_train, X_test, y_train, y_test)
 
@@ -39,7 +40,10 @@ def example_multiple_folds_single_target():
     model = LinearRegression()
     model.fit(X_train, y_train.values.ravel())
     y_pred = model.predict(X_test)
-    performance = calculate_performance(y_test.values.ravel(), y_pred)
+    performance = {
+        'r2': r2_score(y_test.values.ravel(), y_pred),
+        'rmse': np.sqrt(mean_squared_error(y_test.values.ravel(), y_pred))
+    }
     
     return performance, model, (X_train, X_test, y_train, y_test)
 
@@ -57,7 +61,10 @@ def example_single_fold_multiple_targets():
     model = LinearRegression()
     model.fit(X_train, y_train.values)
     y_pred = model.predict(X_test)
-    performance = calculate_performance(y_test.values, y_pred)
+    performance = {
+        'r2': r2_score(y_test.values, y_pred),
+        'rmse': np.sqrt(mean_squared_error(y_test.values, y_pred))
+    }
     
     return performance, model, (X_train, X_test, y_train, y_test)
 
@@ -75,7 +82,10 @@ def example_multiple_folds_multiple_targets():
     model = LinearRegression()
     model.fit(X_train, y_train.values)
     y_pred = model.predict(X_test)
-    performance = calculate_performance(y_test.values, y_pred)
+    performance = {
+        'r2': r2_score(y_test.values, y_pred),
+        'rmse': np.sqrt(mean_squared_error(y_test.values, y_pred))
+    }
     
     return performance, model, (X_train, X_test, y_train, y_test)
 
@@ -94,29 +104,12 @@ def example_custom_folds():
     model = LinearRegression()
     model.fit(X_train, y_train.values.ravel())
     y_pred = model.predict(X_test)
-    performance = calculate_performance(y_test.values.ravel(), y_pred)
+    performance = {
+        'r2': r2_score(y_test.values.ravel(), y_pred),
+        'rmse': np.sqrt(mean_squared_error(y_test.values.ravel(), y_pred))
+    }
     
     return performance, model, (X_train, X_test, y_train, y_test)
-
-def example_visualization():
-    """Example showing visualization of results"""
-    data = load_dataset('BB.250')
-    
-    # Get model and predictions
-    _, model, (X_train, _, _, _) = example_single_fold_single_target()
-    
-    # Generate visualizations if coordinates available
-    soil_map = None
-    importance_plot = None
-    
-    if data.get('Coordinates') is not None:
-        soil_map = plot_soil_map(data, 'SOC_target', title='SOC Distribution')
-        
-    feature_names = X_train.columns
-    importances = model.coef_ if hasattr(model, 'coef_') else model.feature_importances_
-    importance_plot = plot_feature_importance(importances, feature_names)
-    
-    return soil_map, importance_plot
 
 if __name__ == "__main__":
     np.random.seed(2025)
