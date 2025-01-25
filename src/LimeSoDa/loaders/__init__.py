@@ -52,6 +52,13 @@ def load_dataset(name: str) -> dict:
         
     data = np.load(file_path, allow_pickle=True)
     
+    if name == "Overview_Datasets":
+        return pd.DataFrame(
+            data['data'],
+            index=data['index'], 
+            columns=data['columns']
+        )
+        
     # Convert to pandas DataFrame if needed
     if 'dataset_data' in data.files:
         dataset = pd.DataFrame(
@@ -59,11 +66,14 @@ def load_dataset(name: str) -> dict:
             index=data['dataset_index'],
             columns=data['dataset_columns']
         )
-        coords = pd.DataFrame(
-            data['coordinates_data'],
-            index=data['coordinates_index'], 
-            columns=data['coordinates_columns']
-        )
+        try:
+            coords = pd.DataFrame(
+                data['coordinates_data'],
+                index=data['coordinates_index'],
+                columns=data['coordinates_columns']
+            )
+        except KeyError:
+            coords = np.nan
         return {'Dataset': dataset, 'Coordinates': coords, 'Folds': data['folds']}
         
     return dict(data)
@@ -81,6 +91,6 @@ def list_datasets() -> list:
         ['BB.250', 'SP.231', ...]
     """
     return sorted(
-        f.stem.replace('_', '.') 
+        f.stem
         for f in DATA_DIR.glob('*.npz')
     )
