@@ -14,7 +14,7 @@ Description
 * Geological Setting: Sedimentary rocks, mainly dolomite with silt and limestone formed in the middle and lower Jurassic
 * Previous Data Publication: Full dataset published in Wadoux et al. (2024)
 * Contact Information:
-    * Alexandre M.J.-C- Wadoux (Alexandre.Wadoux@inrae.fr), University of Montpellier
+    * Alexandre M.J.-C- Wadoux (Alexandre.Wadoux@inrae.fr), French National Institute for Agriculture, Food, and Environment (INRAE)
 * License: CC BY-SA 4.0
 * Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
 * Changelog:
