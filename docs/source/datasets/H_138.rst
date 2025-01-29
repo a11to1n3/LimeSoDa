@@ -9,7 +9,7 @@ Description
 * Number of Features: 2,489
 * Coordinates: With coordinates (EPSG: 32649)
 * Location: Hubei, China
-* Sampling Design: Two sampling designs: (1) adapted Latin Hypercube Sampling taking into account legacy samples, correlation and accessibility and (2) Uncertainty Guided Sampling based on uncertainty predictions from a Random Forest model (Stumpf et al. 2017)
+* Sampling Design: Two sampling designs: (1) adapted latin hypercube sampling taking into account legacy samples, correlation and accessibility and (2) uncertainty guided sampling based on uncertainty predictions from a random forest model (Stumpf et al. 2017)
 * Study Area Size: 420 ha
 * Geological Setting: Sedimentary rocks, mainly dolomite with silt and limestone formed in the middle and lower Jurassic
 * Previous Data Publication: Full dataset published in Wadoux et al. (2024)
@@ -55,13 +55,13 @@ Groups of Features:
 """""""""""""""""
 
 MIR – Mid Infrared Spectroscopy
-    * Number Features: 2,489
+    * Number of Features: 2,489
     * Code(s): ``wn_5397.9``, ``wn_5396``, ``wn_5394`` ... ``wn_599.8``
     * Unit: % (Reflectance)
     * Sensing: VERTEX 70v FT-IR Spectrometer (Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 - 370 cm^-1 at 0.4 cm^-1 intervals
     * Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 5,397.9 cm^-1) and noisy edges of the spectrum (599.8 - 370 cm^-1)
     * Sampling Date: June 2013, May, 2014 and November 2014
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavenumber (in cm^-1)
         * Spectral Resolution: ~2 cm^-1
         * Spectral Range: 5,397.9 – 599.8 cm^-1
