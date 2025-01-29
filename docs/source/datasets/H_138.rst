@@ -33,7 +33,7 @@ Target Soil Properties:
 SOC - Soil Organic Carbon
     * Code: ``SOC_target``
     * Unit: %
-    * Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO2 release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
+    * Protocol: Determined by the difference of total carbon and inorganic carbon, where total carbon was obtained through elemental analysis by measuring the CO₂ release during dry combustion (DIN ISO 10694) without acid pretreatment and inorganic carbon as 0.12 x the calcium carbonate content, determined by the gas-volumetric Scheibler Method (ISO 10693)
     * Sampling Date: June 2013, May, 2014 and November 2014
     * Sampling Depth: 0 - 20 cm
 
