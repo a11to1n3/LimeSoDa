@@ -55,7 +55,7 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (30 m) based on synthetic aperture radar from "Copernicus Open Access Hub"
@@ -63,7 +63,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Sampling Date: January 2010
 
 RSS – Remote Sensing Derived Spectral Data
-    * Number Features: 12
+    * Number of Features: 12
     * Code(s): ``B01``, ``B02``, ``B03``, ``B04``, ``B05``, ``B06``, ``B07``, ``B08``, ``B8A``, ``B09``, ``B11``, ``B12``
     * Unit: Unitless
     * Sensing: Sentinel-2 bare soil image (Level-2A) from "Copernicus Open Access Hub"
@@ -71,7 +71,7 @@ RSS – Remote Sensing Derived Spectral Data
     * Sampling Date: November 2016
 
 VI - Vegetation Indices
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``NDVI``, ``GNDVI``
     * Unit: Unitless
     * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
