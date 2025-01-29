@@ -56,7 +56,7 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (30 m) based on synthetic aperture radar from "Copernicus Open Access Hub"
@@ -64,7 +64,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Sampling Date: December 2010
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: LandMapper ERM-02 conductivity meter (Landviser, League City, USA) with exploration depth of 0 - 20 cm, in-situ
@@ -72,7 +72,7 @@ ERa – Apparent Electrical Resistivity
     * Sampling Date: December 2010
 
 RSS – Remote Sensing Derived Spectral Data
-    * Number Features: 12
+    * Number of Features: 12
     * Code(s): ``B01``, ``B02``, ``B03``, ``B04``, ``B05``, ``B06``, ``B07``, ``B08``, ``B8A``, ``B09``, ``B11``, ``B12``
     * Unit: Unitless
     * Sensing: Sentinel-2 bare soil image (Level-2A) from "Copernicus Open Access Hub"
@@ -80,10 +80,10 @@ RSS – Remote Sensing Derived Spectral Data
     * Sampling Date: July 2017
 
 VI - Vegetation Indices
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``NDVI``, ``GNDVI``
     * Unit: Unitless
-    * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
+    * Sensing: Sentinel-2 image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
     * Processing: Calculating ``NDVI`` as (B08 - B04) / (B08 + B04) and ``GNDVI`` as (B08 - B03) / (B08 + B03), extracting VI values from raster at soil sampling locations
     * Sampling Date: January 2019
 
