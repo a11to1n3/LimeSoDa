@@ -55,7 +55,7 @@ Groups of Features:
 """""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
-    * Number Features: 271
+    * Number of Features: 271
     * Code(s): ``wl_350``, ``wl_355``, ``wl_360`` ... ``wl_1700``
     * Unit: % (Reflectance)
     * Sensing: Mounted vis-NIR spectrometer (SAS3000, Shibuya Seiki Co. Ltd., Ehime Prefecture, Japan), in-situ, spectral range was 320 – 1,700 nm at 1 - 7 nm intervals
