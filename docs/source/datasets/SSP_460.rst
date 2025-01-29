@@ -55,7 +55,7 @@ Groups of Features:
 """""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
-    * Number Features: 830
+    * Number of Features: 830
     * Code(s): ``wl_350``, ``wl_352``, ``wl_354`` ... ``wl_2498``
     * Unit: % (Reflectance)
     * Sensing: Infra-red intelligent spectroradiometer-IRIS MkIV (Geophysical and Environmental Research Corporation, New York, USA), on dried samples in the laboratory, spectral range was 350 – 3,000 nm at 2 - 5 nm intervals
