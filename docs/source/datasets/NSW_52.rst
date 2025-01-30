@@ -61,7 +61,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Code(s): ``Altitude``, ``Slope``
     * Unit: Altitude in m, Slope in °
     * Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from the "Elevation and Depth – Foundation Spatial Data (ELVIS)"
-    * Processing: Calculating Slope with terrain function of the raster package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating Slope with terrain function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: April 2016
 
 RSS – Remote Sensing Derived Spectral Data
