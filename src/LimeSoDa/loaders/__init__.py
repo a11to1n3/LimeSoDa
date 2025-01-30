@@ -1,5 +1,5 @@
 """
-This module provides functions for loading individual datasets in the Lime_SoDa package.
+This module provides functions for loading individual datasets in the LimeSoDa package.
 
 The datasets are stored as numpy compressed (.npz) files and are loaded into a consistent structure:
 {
@@ -80,7 +80,7 @@ def load_dataset(name: str) -> dict:
 
 def list_datasets() -> list:
     """
-    List all available datasets in the Lime_SoDa package.
+    List all available datasets in the LimeSoDa package.
 
     Returns:
         list: A list of dataset names (strings)

@@ -11,21 +11,6 @@ Data Processing Functions
 
 .. autofunction:: LimeSoDa.utils.split_dataset
 
-.. autofunction:: LimeSoDa.utils.normalize_features
-
-Evaluation Functions
---------------------
-
-.. autofunction:: LimeSoDa.utils.calculate_performance
-
-.. autofunction:: LimeSoDa.utils.cross_validate
-
-Visualization Functions
------------------------
-
-.. autofunction:: LimeSoDa.utils.plot_soil_map
-
-.. autofunction:: LimeSoDa.utils.plot_feature_importance
 
 Helper Functions
 ----------------

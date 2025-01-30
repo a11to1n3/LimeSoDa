@@ -1,18 +1,9 @@
 """
-This module provides utility functions for working with Lime_SoDa datasets.
+This module provides utility functions for working with LimeSoDa datasets.
 
 Functions:
     Data Processing:
         - split_dataset: Split dataset into train/test sets based on folds
-        - normalize_features: Normalize features using various methods
-
-    Evaluation:
-        - calculate_performance: Calculate R-squared and RMSE metrics
-        - cross_validate: Perform k-fold cross validation
-
-    Visualization:
-        - plot_soil_map: Plot soil properties on a map
-        - plot_feature_importance: Plot feature importance from models
 
     Helper Functions:
         - _check_input_types: Validate input data types
@@ -22,10 +13,6 @@ Functions:
 import pandas as pd
 import numpy as np
 from typing import Union, List, Dict, Tuple
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-import matplotlib.pyplot as plt
-import seaborn as sns
-import folium
 
 def _check_input_types(data: dict, fold: Union[int, List[int]], targets: Union[str, List[str], None]) -> None:
     """Validate input data types for dataset functions."""

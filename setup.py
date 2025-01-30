@@ -29,10 +29,7 @@ setup(
     install_requires=[
         "pandas>=1.5.0",
         "numpy>=1.23.0",
-        "matplotlib>=3.5.0",
         "scikit-learn>=1.0.0",
-        "seaborn>=0.11.0",
-        "folium>=0.12.0"
     ],
     extras_require={
         "dev": [
