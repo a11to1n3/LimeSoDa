@@ -11,10 +11,7 @@ Precision Liming Soil Datasets (LimeSoDa) is a collection of datasets from a fie
 
 - Python 3.8 or later
 - numpy >= 1.23.0
-- seaborn >= 0.11.0
-- matplotlib >= 3.3.0
 - pandas >= 1.5.0
-- folium >= 0.12.0
 - scikit-learn >= 1.0.0
 
 ### Optional Development Dependencies
@@ -110,6 +107,7 @@ mean_rmse = np.sqrt(mean_squared_error(y_true_all, y_pred_all))
 print("\nSOC prediction (10-fold CV):")
 print(f"Mean R-squared: {mean_r2:.7f}")  # Mean R-squared: 0.7507837
 print(f"Mean RMSE: {mean_rmse:.7f}")     # Mean RMSE: 0.2448791
+```
 
 ## Available Datasets
 
@@ -195,4 +193,4 @@ LimeSoDa is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/b
 
 ## Contributing
 
-We welcome contributions! Feel free to submit a [Pull Request](https://github.com/JonasSchmidinger/LimeSoDa/pulls) to enhance LimeSoDa.
+We welcome contributions! Feel free to submit a [Pull Request](https://github.com/a11to1n3/LimeSoDa/pulls) to enhance LimeSoDa.
