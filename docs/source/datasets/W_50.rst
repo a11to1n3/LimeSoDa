@@ -55,7 +55,7 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (3 m) based on LiDAR from the "Wisconsin Department of Natural Resources"
@@ -63,7 +63,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Sampling Date: Unknown
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: DUALEM-1HS instrument (DUALEM Inc., Milton, Canada) with exploration depth of 0 - 30 cm, in-situ
@@ -71,7 +71,7 @@ ERa – Apparent Electrical Resistivity
     * Sampling Date: July 2019
 
 VI - Vegetation Indices
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``NDVI``, ``GNDVI``
     * Unit: Unitless
     * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
@@ -79,7 +79,7 @@ VI - Vegetation Indices
     * Sampling Date: July 2019
 
 XRF – X-ray Fluorescence Derived Elemental Concentrations
-    * Number Features: 10
+    * Number of Features: 10
     * Code(s): ``XRF_Mg``, ``XRF_Al``, ``XRF_Si``, ``XRF_Ca``, ``XRF_Ti``, ``XRF_Mn``, ``XRF_Fe``, ``XRF_Zn``, ``XRF_Sr``, ``XRF_Zr``
     * Unit: ppm (estimated through XRF Geochem not ground truth)
     * Sensing: Delta Premium PXRF spectrometer (Olympus Scientific Solutions Americas Inc., Waltham, USA), on dried and sieved samples (<2 mm) in the laboratory
