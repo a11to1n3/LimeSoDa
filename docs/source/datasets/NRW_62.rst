@@ -56,13 +56,13 @@ Groups of Features:
 """""""""""""""""
 
 MIR – Mid Infrared Spectroscopy
-    * Number Features: 1,686
+    * Number of Features: 1,686
     * Code(s): ``wn_3799``, ``wn_3797.1``, ``wn_3795.1`` ... ``wn_549.6``
     * Unit: % (Reflectance)
     * Sensing: MIR spectrometer (Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 – 549.6 cm⁻¹ at 4 cm⁻¹ intervals
     * Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 3,799 cm⁻¹), resampling to ~2 cm⁻¹ intervals
     * Sampling Date: November 2017
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavenumber (in cm⁻¹)
         * Spectral Resolution: ~2 cm⁻¹
         * Spectral Range: 3,799 - 549.6 cm⁻¹
