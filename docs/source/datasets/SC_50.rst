@@ -56,15 +56,15 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (30 m) based on synthetic aperture radar from "Copernicus Open Access Hub"
-    * Processing: Calculating ``Slope`` with ``terrain`` function of the ``raster`` package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: October 2011
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: LandMapper ERM-02 conductivity meter (Landviser, League City, USA) with exploration depth of 0 - 20 cm, in-situ
