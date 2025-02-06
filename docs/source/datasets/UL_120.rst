@@ -56,7 +56,7 @@ Groups of Features:
 """""""""""""""""
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: EM38 sensor (Geonics Ltd., Mississauga, Canada) with exploration depth of 0 - 150 cm, in-situ
@@ -64,7 +64,7 @@ ERa – Apparent Electrical Resistivity
     * Sampling Date: April 2005
 
 vis-NIR – Visible and Near Infrared Spectroscopy
-    * Number Features: 2,081
+    * Number of Features: 2,081
     * Code(s): ``wl_420``, ``wl_421``, ``wl_422`` ... ``wl_2500``
     * Unit: % (Reflectance)
     * Sensing: FieldSpec Pro FR scanning instrument (Analytical Spectral Devices Inc., Boulder, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 350 – 2,500 nm at 1.4 – 2.0 nm intervals
