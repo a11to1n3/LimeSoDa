@@ -59,7 +59,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (30 m) based on synthetic aperture radar from "Copernicus Open Access Hub"
-    * Processing: Calculating ``Slope`` with ``terrain`` function of the ``raster`` R-package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: February 2011
 
 RSS – Remote Sensing Derived Spectral Data
