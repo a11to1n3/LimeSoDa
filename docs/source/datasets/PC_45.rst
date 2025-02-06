@@ -57,7 +57,7 @@ Groups of Features:
 """""""""""""""""
 
 CSMoist – Capacitive Soil Moisture
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``CSMoist``
     * Unit: % (volumetric moisture content)
     * Sensing: Capacitive soil moisture sensor (BR-30, Research Institute of Soil Science and Agricultural Chemistry, Hungary, Budapest) with exploration depth of 10 cm, in-situ
@@ -65,7 +65,7 @@ CSMoist – Capacitive Soil Moisture
     * Sampling Date: November 2004
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 3
+    * Number of Features: 3
     * Code(s): ``ERa_EM``, ``ERa_ERS``, ``ERa_P``
     * Unit: Ω m
     * Sensing: Three different devices
