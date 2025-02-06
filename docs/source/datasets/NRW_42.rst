@@ -56,7 +56,7 @@ Groups of Features:
 """""""""""""""""
 
 MIR – Mid Infrared Spectroscopy
-    * Number Features: 1,686
+    * Number of Features: 1,686
     * Code(s): ``wn_3799``, ``wn_3797.1``, ``wn_3795.1`` ... ``wn_549.6``
     * Unit: % (Reflectance)
     * Sensing: MIR spectrometer (Bruker Tensor 27 HTS-XT, Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 – 550 cm⁻¹ at 4 cm⁻¹ intervals
