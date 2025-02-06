@@ -56,7 +56,7 @@ Groups of Features:
 """""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
-    * Number Features: 2,146
+    * Number of Features: 2,146
     * Code(s): ``wl_355``, ``wl_356``, ``wl_357`` ... ``wl_2500``
     * Unit: % (Reflectance)
     * Sensing: ASD FieldSpec 4 (Analytical Spectral Devices Inc., Boulder, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 355 - 2,500 nm at 3 - 8 nm intervals
