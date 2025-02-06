@@ -62,7 +62,7 @@ MIR – Mid Infrared Spectroscopy
     * Sensing: MIR spectrometer (Bruker Tensor 27 HTS-XT, Bruker Optik, Ettlingen, Germany), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 7,500 – 550 cm⁻¹ at 4 cm⁻¹ intervals
     * Processing: Discarding irrelevant spectral data of the spectrum (7,500 - 3,799 cm⁻¹), resampling to ~2 cm⁻¹ intervals
     * Sampling Date: April 2013
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavenumber (in cm⁻¹)
         * Spectral Resolution: ~2 cm⁻¹
         * Spectral Range: 3,799 - 549.6 cm⁻¹
