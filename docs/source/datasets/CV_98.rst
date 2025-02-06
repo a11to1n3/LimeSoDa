@@ -56,7 +56,7 @@ Groups of Features:
 """""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
-    * Number Features: 2,151
+    * Number of Features: 2,151
     * Code(s): ``wl_350``, ``wl_351``, ``wl_352`` ... ``wl_2500``
     * Unit: % (Reflectance)
     * Sensing: vis-NIR spectrometer (PSR+3500, Spectral Evolution, Haverhill, USA), in-situ from Edelman auger (denoted as scantype = a in original dataset publication), spectral range was 350 - 2500 nm at 3 - 8 nm intervals
