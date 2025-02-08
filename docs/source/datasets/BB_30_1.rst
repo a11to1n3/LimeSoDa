@@ -55,7 +55,7 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from "GeoBasis-DE/LGB"
@@ -63,7 +63,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Sampling Date: LiDAR March 2011, images for photogrammetry May 2022
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: EC Surveyor (VERIS Technologies, Salinas, USA) from VerisMSP3 with exploration depth of 0 - 30 cm, in-situ
@@ -71,7 +71,7 @@ ERa – Apparent Electrical Resistivity
     * Sampling Date: August 2017
 
 pH-ISE – Ion Selective Electrodes for pH Determination
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``pH-ISE``
     * Unit: Unitless
     * Sensing: Soil pH Manager (VERIS Technologies, Salinas, USA) from VerisMSP3, in-situ
@@ -79,7 +79,7 @@ pH-ISE – Ion Selective Electrodes for pH Determination
     * Sampling Date: August 2017
 
 VI - Vegetation Indices
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``NDVI``
     * Unit: Unitless
     * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
