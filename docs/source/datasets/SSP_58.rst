@@ -56,7 +56,7 @@ Groups of Features:
 """""""""""""""""
 
 vis-NIR – Visible and Near Infrared Spectroscopy
-    * Number Features: 351
+    * Number of Features: 351
     * Code(s): ``wl_431.6``, ``wl_437.4``, ``wl_449.1`` ... ``wl_2153.1``
     * Unit: % (Reflectance)
     * Sensing: vis-NIR spectrometer of former Veris MSP3 (Veris Technologies, Salina, Kansas, USA) which is based on two spectrometers (USB4000, Ocean optics, Largo, FL, USA) for the visible region and (C9914GB, Hamamatsu Photonics, Hamamatsu, Japan) for the NIR region, on dried and sieved samples (<2 mm) in the laboratory, spectral range was 343 - 2,200 nm at ~5 nm intervals
