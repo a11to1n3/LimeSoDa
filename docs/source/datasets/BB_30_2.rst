@@ -56,15 +56,15 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from "GeoBasis-DE/LGB"
-    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: LiDAR March 2011, images for photogrammetry May 2022
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: Array of multiple rolling electrodes (Geophilus company, Caputh, Germany) on RapidMapper platform with exploration depth of 0 - 50 cm, in-situ
@@ -72,7 +72,7 @@ ERa – Apparent Electrical Resistivity
     * Sampling Date: September 2022
 
 Gamma
-    * Number Features: 5
+    * Number of Features: 5
     * Code(s): ``G_Total_Counts``, ``G_K``, ``G_U``, ``G_Th``, ``G_Cs``
     * Unit: Unitless
     * Sensing: Passive gamma sensor (MS-2000-CsI-MTS, Medusa Radiometrics BV, Groningen, Netherlands) on RapidMapper platform, in-situ
@@ -80,7 +80,7 @@ Gamma
     * Sampling Date: September 2022
 
 RSS – Remote Sensing Derived Spectral Data
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``B04``
     * Unit: Unitless
     * Sensing: Sentinel-2 bare soil image (Level-2A) from "Copernicus Open Access Hub"
@@ -88,7 +88,7 @@ RSS – Remote Sensing Derived Spectral Data
     * Sampling Date: September 2022
 
 VI - Vegetation Indices
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``NDVI``
     * Unit: Unitless
     * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
