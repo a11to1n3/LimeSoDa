@@ -59,7 +59,7 @@ DEM – Digital Elevation Model and Terrain Parameters
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from "GeoBasis-DE/LGB"
-    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: LiDAR March 2011, images for photogrammetry May 2022
 
 ERa – Apparent Electrical Resistivity
