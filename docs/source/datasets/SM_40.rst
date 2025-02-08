@@ -53,15 +53,15 @@ Clay
 Groups of Features:
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude, Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (~2 m) based on LiDAR from "Geoportal of the Czech Office for Surveying, Mapping and Cadastre"
-    * Processing: Calculating ``Slope`` with ``terrain`` function of the ``raster`` package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: Unknown
 
 ERa – Apparent Electrical Resistivity
-    * Number Features: 1
+    * Number of Features: 1
     * Code(s): ``ERa``
     * Unit: Ω m
     * Sensing: EM38 sensor (Geonics Ltd., Mississauga, Canada) drawn by a vehicle with exploration depth of 0 - 75 cm, in-situ
