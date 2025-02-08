@@ -56,13 +56,13 @@ Groups of Features:
 """""""""""""""""
 
 MIR – Mid Infrared Spectroscopy
-    * Number Features: 1,637
+    * Number of Features: 1,637
     * Code(s): ``wn_3800``, ``wn_3797.1``, ``wn_3795.1`` ... ``wn_751.1``
     * Unit: % (Reflectance)
     * Sensing: Handheld MIR spectrometer (Agilent 4300, Agilent Technologies, Santa Clara, USA), on dried and sieved samples (<2 mm) in the laboratory, spectral range was 5,200 – 650 cm⁻¹ at 4 - 16 cm⁻¹ intervals
     * Processing: Discarding irrelevant spectral data of the spectrum (5,200 - 3,800 cm⁻¹) and noisy edges of the spectrum (751.1 - 650 cm⁻¹), resampling to ~2 cm⁻¹ intervals
     * Sampling Date: March 2020
-    * Spectral Information (after data processing):
+    * Spectral Information (After Data Processing):
         * Data Representation: Wavenumber (in cm⁻¹)
         * Spectral Resolution: ~2 cm⁻¹
         * Spectral Range: 3,800 - 751.1 cm⁻¹
