@@ -91,7 +91,7 @@ VI - Vegetation Indices
     * Number of Features: 1
     * Code(s): ``NDVI``
     * Unit: Unitless
-    * Sensing: Sentinel-2 Image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
+    * Sensing: Sentinel-2 image during vegetative period (Level-2A) from "Copernicus Open Access Hub"
     * Processing: Calculating ``NDVI`` as (B08 - B04) / (B08 + B04), extracting VI values from raster at soil sampling locations
     * Sampling Date: April 2023
 
