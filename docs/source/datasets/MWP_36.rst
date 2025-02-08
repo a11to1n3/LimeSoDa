@@ -56,15 +56,15 @@ Groups of Features:
 """""""""""""""""
 
 DEM – Digital Elevation Model and Terrain Parameters
-    * Number Features: 2
+    * Number of Features: 2
     * Code(s): ``Altitude``, ``Slope``
     * Unit: ``Altitude`` in m, ``Slope`` in °
     * Sensing: Digital elevation model raster (5 m) based on LiDAR and photogrammetry from "LAiV Geodaten-MV"
-    * Processing: Calculating ``Slope`` with ``terrain`` function of the ``raster`` package, extracting DEM values from raster at soil sampling locations
+    * Processing: Calculating ``Slope`` with ``terrain`` function of the raster R-package, extracting DEM values from raster at soil sampling locations
     * Sampling Date: Unknown
 
 RSS – Remote Sensing Derived Spectral Data
-    * Number Features: 3
+    * Number of Features: 3
     * Code(s): ``B02``, ``B8A``, ``B11``
     * Unit: Unitless
     * Sensing: Sentinel-2 bare soil image (Level-2A) from "Copernicus Open Access Hub", with bands of 10 - 20 m spatial resolution
