@@ -180,10 +180,12 @@ If you utilize this package in your research, please cite the associated paper:
 
 ```bibtex
 @article{schmidinger2025limesoda,
-    title={LimeSoDa: An open dataset collection for machine learning benchmarking in digital soil mapping},
-    author={Schmidinger, J. and Others},
-    journal={XXX},
-    year={2025}
+    title={LimeSoDa: A Dataset Collection for Benchmarking of Machine Learning Regressors in Digital Soil Mapping},
+  author={Schmidinger, J. and Vogel, S. and Barkov, V. and Pham, A.-D. and Gebbers, R. and Tavakoli, H. and Correa, J. and Tavares, T. R. and Filippi, P. and Jones, E. J. and Lukas, V. and Boenecke, E. and Ruehlmann, J. and Schroeter, I. and Kramer, E. and Paetzold, S. and Kodaira, M. and Wadoux, A. M. J.-C. and Bragazza, L. and Metzger, K. and Huang, J. and Valente, D. S. M. and Safanelli, J. L. and Bottega, E. L. and Dalmolin, R. S. D. and Farkas, C. and Steiger, A. and Horst, T. Z. and Ramirez-Lopez, L. and Scholten, T. and Stumpf, F. and Rosso, P. and Costa, M. M. and Zandonadi, R. S. and Wetterlind, J. and Atzmueller, M.},
+  year={2025},
+  journal={XXX},
+  volume={XXX},
+  doi   = {XXX}
 }
 ```
 
