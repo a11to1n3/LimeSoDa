@@ -17,9 +17,9 @@ Description
 * Contact Information:
     * Alexander Steiger (alexander.steiger@uni-rostock.de), University of Rostock
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
+* Publication/Modification Date (d/m/y): 28.02.25, version 1.0
 * Changelog:
-    * Version 1.0 (XXX.03.2025): Initial release
+    * Version 1.0 (28.02.25): Initial release
 
 Details
 -------

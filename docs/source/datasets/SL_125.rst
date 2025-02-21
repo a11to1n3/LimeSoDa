@@ -17,9 +17,9 @@ Description
     * Johanna Wetterlind (Johanna.Wetterlind@slu.se), Swedish University of Agricultural Sciences
     * Bo Stenberg (Bo.Stenberg@slu.se), Swedish University of Agricultural Sciences
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
+* Publication/Modification Date (d/m/y): 28.02.25, version 1.0
 * Changelog:
-    * Version 1.0 (XXX.03.2025): Initial release
+    * Version 1.0 (28.02.25): Initial release
 
 Details
 -------

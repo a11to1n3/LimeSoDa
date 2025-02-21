@@ -18,9 +18,9 @@ Description
     * Csilla.Farkas (Csilla.Farkas@nibio.no), Norwegian Institute of Bioeconomy Research (NIBIO)
     * Tibor Tóth (tibor@rissac.hu), HUN-REN Centre for Agricultural Research
 * License: CC BY-SA 4.0
-* Publication/Modification Date (d/m/y): XXX.03.2025, version 1.0
+* Publication/Modification Date (d/m/y): 28.02.25, version 1.0
 * Changelog:
-    * Version 1.0 (XXX.03.2025): Initial release
+    * Version 1.0 (28.02.25): Initial release
 
 Details
 -------
