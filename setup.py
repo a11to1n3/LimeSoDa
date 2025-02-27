@@ -17,7 +17,7 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: MIT License", 
+        "License :: OSI Approved :: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
