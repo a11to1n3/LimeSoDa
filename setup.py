@@ -8,7 +8,7 @@ setup(
     version="0.1.0", 
     author="Jonas Schmidinger",
     author_email="jonas.schmidinger@uni-osnabrueck.de",
-    description="Precision Liming Soil Datasets (Lime.SoDa) for Python",
+    description="Precision Liming Soil Datasets (LimeSoDa) for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/a11to1n3/LimeSoDa",
@@ -40,7 +40,7 @@ setup(
         ]
     },
     package_data={
-        "LimeSoDa": ["data/*.pkl"],
+        "LimeSoDa": ["data/*.npz"],
     },
     include_package_data=True,
 )
