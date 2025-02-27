@@ -1,67 +1,13 @@
 # LimeSoDa
 
-Precision Liming Soil Datasets (LimeSoDa) is a collection of datasets from a field- and farm-scale soil mapping context and this is the associated python dataset package **LimeSoDa**. These datasets are 'ready-to-go' for modeling purposes, as they contain target soil properties and features in a tabular format. Target soil properties for all datasets are; soil organic matter (SOM) or -carbon (SOC), pH and clay, while the features for modeling are dataset-specific. The goal of LimeSoDa is to enable more reliable benchmarking and comparison of various modeling approaches in Digital Soil Mapping and Pedometrics by providing an open collection of multiple datasets. 
+Python package of LimeSoDa. See also the [R package implementation](https://github.com/JonasSchmidinger/LimeSoDa).
+
+Precision Liming Soil Datasets (LimeSoDa) is a collection of 31 datasets from a field- and farm-scale soil mapping context. These datasets are "ready-to-use" for modeling purposes, as they include target soil properties and features in a tidy tabular format. The target soil properties are soil organic matter (SOM) or soil organic carbon (SOC), pH, and clay content, while the features for modeling are dataset-specific. The primary goal of `LimeSoDa` is to enable more reliable benchmarking of machine learning methods in digital soil mapping and pedometrics.
 
 ## Installation
-
-### Requirements
-
-- Python 3.8 or later
-- numpy >= 1.23.0
-- pandas >= 1.5.0
-- scikit-learn >= 1.0.0
-
-### Optional Development Dependencies
-
-- pytest >= 7.0.0
-- black >= 22.0.0
-- isort >= 5.0.0
-- flake8 >= 4.0.0
-
-### Installing with pip
-
-Install LimeSoDa via pip:
-
+Install LimeSoDa from source:
 ```bash
-pip install LimeSoDa
-```
-
-For development dependencies:
-
-```bash
-pip install LimeSoDa[dev]
-```
-
-### Installing from Source
-
-To install LimeSoDa from source:
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/a11to1n3/LimeSoDa.git
-    cd LimeSoDa
-    ```
-
-2. Install the package:
-
-    ```bash
-    pip install -e .
-    ```
-
-    For development dependencies:
-
-    ```bash
-    pip install -e .[dev]
-    ```
-
-### Verifying Installation
-
-To verify that LimeSoDa is installed correctly, run:
-
-```python
-import LimeSoDa
-print(LimeSoDa.__version__)
+pip install git+https://github.com/a11to1n3/LimeSoDa.git
 ```
 
 ## Quick Start
@@ -105,6 +51,11 @@ print("\nSOC prediction (10-fold CV):")
 print(f"Mean R-squared: {mean_r2:.7f}")  # Mean R-squared: 0.7507837
 print(f"Mean RMSE: {mean_rmse:.7f}")     # Mean RMSE: 0.2448791
 ```
+
+## Documentation
+
+For detailed information, visit the [official documentation](https://limesoda.readthedocs.io/en/latest/). You can also find practical usage examples in the [examples](examples/) directory.
+
 
 ## Available Datasets
 
@@ -164,12 +115,6 @@ The following groups of features are present in datasets of LimeSoDa:
 - X-ray fluorescence derived elemental concentrations (XRF)
 - Vegetation Indices (VI)
 - Visible- and near infrared spectroscopy (vis-NIR)
-
-
-
-## Documentation
-
-Comprehensive documentation and usage examples are available in the [examples](examples/) directory.
 
 ## Citation
 
