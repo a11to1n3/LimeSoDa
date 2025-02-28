@@ -17,7 +17,7 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
-        # "License :: OSI Approved :: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)",
+        "License :: Other/Proprietary License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -43,4 +43,5 @@ setup(
         "LimeSoDa": ["data/*.npz"],
     },
     include_package_data=True,
+    license="Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)",
 )
