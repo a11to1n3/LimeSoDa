@@ -1,1 +1,9 @@
-
+@misc{schmidinger2025limesodadatasetcollectionbenchmarking,
+      title={LimeSoDa: A Dataset Collection for Benchmarking of Machine Learning Regressors in Digital Soil Mapping}, 
+      author={J. Schmidinger and S. Vogel and V. Barkov and A. -D. Pham and R. Gebbers and H. Tavakoli and J. Correa and T. R. Tavares and P. Filippi and E. J. Jones and V. Lukas and E. Boenecke and J. Ruehlmann and I. Schroeter and E. Kramer and S. Paetzold and M. Kodaira and A. M. J. -C. Wadoux and L. Bragazza and K. Metzger and J. Huang and D. S. M. Valente and J. L. Safanelli and E. L. Bottega and R. S. D. Dalmolin and C. Farkas and A. Steiger and T. Z. Horst and L. Ramirez-Lopez and T. Scholten and F. Stumpf and P. Rosso and M. M. Costa and R. S. Zandonadi and J. Wetterlind and M. Atzmueller},
+      year={2025},
+      eprint={2502.20139},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.20139}, 
+}
