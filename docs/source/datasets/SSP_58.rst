@@ -20,6 +20,7 @@ Description
 * Publication/Modification Date (d/m/y): 28.02.25, version 1.0
 * Changelog:
     * Version 1.0 (28.02.25): Initial release
+    * Version 1.1 (15.05.25): Unit bug fix for SOC
 
 Details
 -------
@@ -33,7 +34,7 @@ Target Soil Properties:
 
 SOC - Soil Organic Carbon
     * Code: ``SOC_target``
-    * Unit: mmolc dm⁻³
+    * Unit: g dm⁻³
     * Protocol: Measured through titration after oxidization of the organic carbon (Walkley & Black 1934)
     * Sampling Date: September 2015
     * Sampling Depth: 0 - 20 cm
