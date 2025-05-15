@@ -9,7 +9,7 @@ Description
 * Number of Features: 17
 * Coordinates: With coordinates (EPSG: 25833)
 * Location: Brandenburg, Germany
-* Sampling Design: Regular grid sampling
+* Sampling Design: Triangular grid sampling
 * Study Area Size: 3.4 ha
 * Geological Setting: Pleistocene young morainic landscape of the Weichselian glaciation with predominantly glacial sand
 * Previous Data Publication: Target soil properties published but under embargo in Vogel et al. 2022
@@ -20,6 +20,7 @@ Description
 * Publication/Modification Date (d/m/y): 28.02.25, version 1.0
 * Changelog:
     * Version 1.0 (28.02.25): Initial release
+    * Version 1.1 (15.05.2025): Sampling design documentation bug fix
 
 Details
 -------
