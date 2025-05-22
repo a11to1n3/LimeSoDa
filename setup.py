@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="LimeSoDa",
-    version="0.1.4", 
+    version="0.1.5",
     author="Jonas Schmidinger",
     author_email="jonas.schmidinger@uni-osnabrueck.de",
     description="Precision Liming Soil Datasets (LimeSoDa) for Python",
