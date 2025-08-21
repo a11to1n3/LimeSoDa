@@ -1,5 +1,5 @@
 # LimeSoDa
-![Downloads](https://img.shields.io/github/downloads/a11to1n3/LimeSoDa/total)
+[![PyPI Downloads](https://static.pepy.tech/badge/limesoda/month)](https://pepy.tech/projects/limesoda)
 
 Python package of LimeSoDa. See also the [R package implementation](https://github.com/JonasSchmidinger/LimeSoDa).
 
