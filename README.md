@@ -1,9 +1,38 @@
 # LimeSoDa
-[![PyPI Downloads](https://static.pepy.tech/badge/limesoda/month)](https://pepy.tech/projects/limesoda)
+
+<!-- Package Stats -->
+[![PyPI Version](https://img.shields.io/pypi/v/limesoda?label=PyPI&color=blue)](https://pypi.org/project/limesoda/)
+[![PyPI Downloads](https://static.pepy.tech/badge/limesoda)](https://pepy.tech/projects/limesoda)
+[![Monthly Downloads](https://static.pepy.tech/badge/limesoda/month)](https://pepy.tech/projects/limesoda)
+[![Python Versions](https://img.shields.io/pypi/pyversions/limesoda)](https://pypi.org/project/limesoda/)
+
+<!-- Repository Stats -->
+[![GitHub Stars](https://img.shields.io/github/stars/a11to1n3/LimeSoDa?style=social)](https://github.com/a11to1n3/LimeSoDa/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/a11to1n3/LimeSoDa?style=social)](https://github.com/a11to1n3/LimeSoDa/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/a11to1n3/LimeSoDa)](https://github.com/a11to1n3/LimeSoDa/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/a11to1n3/LimeSoDa)](https://github.com/a11to1n3/LimeSoDa/pulls)
+
+<!-- License & Citation -->
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.geoderma.2025.117337-blue)](https://doi.org/10.1016/j.geoderma.2025.117337)
+[![Paper](https://img.shields.io/badge/Paper-Geoderma-green)](https://www.sciencedirect.com/science/article/pii/S0016706125001752)
+
+<!-- Community -->
+[![Contributors](https://img.shields.io/github/contributors/a11to1n3/LimeSoDa)](https://github.com/a11to1n3/LimeSoDa/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/a11to1n3/LimeSoDa)](https://github.com/a11to1n3/LimeSoDa/commits/main)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/a11to1n3/LimeSoDa/graphs/commit-activity)
 
 Python package of LimeSoDa. See also the [R package implementation](https://github.com/JonasSchmidinger/LimeSoDa).
 
 Precision Liming Soil Datasets (LimeSoDa) is a collection of 31 datasets from a field- and farm-scale soil mapping context. These datasets are "ready-to-use" for modeling purposes, as they include target soil properties and features in a tidy tabular format. The target soil properties are soil organic matter (SOM) or soil organic carbon (SOC), pH, and clay content, while the features for modeling are dataset-specific. The primary goal of `LimeSoDa` is to enable more reliable benchmarking of machine learning methods in digital soil mapping and pedometrics.
+
+## 📊 Key Features
+
+- **31 curated datasets** for digital soil mapping
+- **Ready-to-use** tabular format with target properties and features
+- **Pre-defined 10-fold CV splits** for reproducible benchmarking
+- **Diverse feature types** including spectroscopy, remote sensing, and terrain data
+- **Comprehensive documentation** with examples and tutorials
 
 ## Installation
 
@@ -11,7 +40,6 @@ Install LimeSoDa from Pypi:
 ```bash
 pip install LimeSoda
 ```
-
 
 Install LimeSoDa from source:
 ```bash
@@ -64,7 +92,6 @@ print(f"Mean RMSE: {mean_rmse:.7f}")     # Mean RMSE: 0.2448791
 
 For detailed information, visit the [official documentation](https://limesoda.readthedocs.io/en/latest/). You can also find practical usage examples in the [examples](examples/) directory.
 
-
 ## Available Datasets
 
 LimeSoDa includes a diverse collection of datasets, each varying in sample size and geographic focus:
@@ -110,6 +137,7 @@ Datasets comprise:
 - **Coordinates**: Provided where available
 
 ## Features
+
 The following groups of features are present in datasets of LimeSoDa:
 
 - Capacitive soil moisture sensor (CSMoisture)
